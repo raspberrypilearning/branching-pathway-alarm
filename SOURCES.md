@@ -1,0 +1,7 @@
+# Sources and attribution
+
+The structure follows [Branching Pathways Platformer](https://github.com/raspberrypilearning/branching-pathways-platformer), checked against commit `e3b7e77b18933e58ccb1a15f051ad793a6c8de41`. The Pico setup, route-copy workflow and established Detect-card snippets were adapted from [Pico Musical Instrument](https://github.com/raspberrypilearning/branching-pathways-pico-instrument), commit `b14c31a6cde2efe3e51ee97be683502bde47e555`. Alarm text, rule examples and complete sample programs are new.
+
+The ten input cards and active/passive buzzer snippets and diagrams come from [Raspberry Pi Foundation Skills Bricks](https://raspberrypifoundation.github.io/skills-bricks/). The single LED and RGB LED snippets and diagrams come from the published [LED](https://raspberrypifoundation.github.io/skills-bricks/led/led-pico.html) and [RGB LED](https://raspberrypifoundation.github.io/skills-bricks/rgb-led/rgb-led-pico.html) cards. The copied output diagrams were byte-matched to those published pages on 20 October 2026. `data/bricks.json` records card URLs and original code; `data/assets.json` records copied image hashes and local sources. Source artwork retains its existing ownership and licence terms.
+
+Setup pictures and the initial LED test come from the instrument pathway's Build Lab-derived setup. The learner pages explain their use in this project; the original upstream attribution remains in [the instrument source record](https://github.com/raspberrypilearning/branching-pathways-pico-instrument/blob/main/SOURCES.md).

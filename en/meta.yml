@@ -1,0 +1,38 @@
+title: Pico Alarm
+hero_image: images/banner.png
+description: Build an alarm that notices a change and gives a warning, your way.
+listed: false
+pdf: false
+landing: true
+steps:
+  - title: '1A - Connect and test your Pico'
+    completion:
+      - engaged
+  - title: '2A - Follow your own alarm idea'
+  - title: '2B - Fold a home for it'
+  - title: '2C - Adapt an object'
+  - title: '3A - Press or separate contacts'
+  - title: '3B - Touch a pad'
+  - title: '3C - Flip a switch'
+  - title: '3D - Tip or move it'
+  - title: '3E - Watch the light'
+  - title: '3F - Notice someone nearby'
+  - title: '3G - Cross a marked line'
+  - title: '3H - Turn a dial'
+  - title: '3I - Notice warmth'
+  - title: '3J - Check warm or cool'
+  - title: '4A - Flash one LED'
+  - title: '4B - Change warning colours'
+  - title: '4C - Sound an active buzzer'
+  - title: '4D - Make a warning tone'
+  - title: '5A - Choose what counts as a trigger'
+  - title: '5B - Arm and reset your alarm'
+  - title: '5C - Change the warning pattern'
+  - title: '6A - Join one input and warning'
+  - title: '6B - Add another input or warning'
+  - title: '7A - Try it and improve it'
+    completion:
+      - internal
+  - title: '8A - Guard a model treasure'
+  - title: '8B - Notice a visitor'
+  - title: '8C - Notice a moved object'

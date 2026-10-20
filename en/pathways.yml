@@ -1,0 +1,133 @@
+title: Pico Alarm
+steps_are_files: true
+canonical_step_count: 27
+
+# Group numbers organise the menu; after 1A they are not a required order.
+groups:
+  - id: 1
+    title: Start here
+    options:
+      - id: 1A
+        file: 1A - Connect and test your Pico.md
+        title: 1A - Connect and test your Pico
+  - id: 2
+    title: Make its home
+    options:
+      - id: 2A
+        file: 2A - Follow your own alarm idea.md
+        title: 2A - Follow your own alarm idea
+      - id: 2B
+        file: 2B - Fold a home for it.md
+        title: 2B - Fold a home for it
+      - id: 2C
+        file: 2C - Adapt an object.md
+        title: 2C - Adapt an object
+  - id: 3
+    title: Detect a change
+    options:
+      - id: 3A
+        file: 3A - Press or separate contacts.md
+        title: 3A - Press or separate contacts
+      - id: 3B
+        file: 3B - Touch a pad.md
+        title: 3B - Touch a pad
+      - id: 3C
+        file: 3C - Flip a switch.md
+        title: 3C - Flip a switch
+      - id: 3D
+        file: 3D - Tip or move it.md
+        title: 3D - Tip or move it
+      - id: 3E
+        file: 3E - Watch the light.md
+        title: 3E - Watch the light
+      - id: 3F
+        file: 3F - Notice someone nearby.md
+        title: 3F - Notice someone nearby
+      - id: 3G
+        file: 3G - Cross a marked line.md
+        title: 3G - Cross a marked line
+      - id: 3H
+        file: 3H - Turn a dial.md
+        title: 3H - Turn a dial
+      - id: 3I
+        file: 3I - Notice warmth.md
+        title: 3I - Notice warmth
+      - id: 3J
+        file: 3J - Check warm or cool.md
+        title: 3J - Check warm or cool
+  - id: 4
+    title: Give a warning
+    options:
+      - id: 4A
+        file: 4A - Flash one LED.md
+        title: 4A - Flash one LED
+      - id: 4B
+        file: 4B - Change warning colours.md
+        title: 4B - Change warning colours
+      - id: 4C
+        file: 4C - Sound an active buzzer.md
+        title: 4C - Sound an active buzzer
+      - id: 4D
+        file: 4D - Make a warning tone.md
+        title: 4D - Make a warning tone
+  - id: 5
+    title: Decide when
+    options:
+      - id: 5A
+        file: 5A - Choose what counts as a trigger.md
+        title: 5A - Choose what counts as a trigger
+      - id: 5B
+        file: 5B - Arm and reset your alarm.md
+        title: 5B - Arm and reset your alarm
+      - id: 5C
+        file: 5C - Change the warning pattern.md
+        title: 5C - Change the warning pattern
+  - id: 6
+    title: Bring it together
+    options:
+      - id: 6A
+        file: 6A - Join one input and warning.md
+        title: 6A - Join one input and warning
+      - id: 6B
+        file: 6B - Add another input or warning.md
+        title: 6B - Add another input or warning
+  - id: 7
+    title: Try and improve
+    options:
+      - id: 7A
+        file: 7A - Try it and improve it.md
+        title: 7A - Try it and improve it
+  - id: 8
+    title: Optional ideas to borrow
+    options:
+      - id: 8A
+        file: 8A - Guard a model treasure.md
+        title: 8A - Guard a model treasure
+      - id: 8B
+        file: 8B - Notice a visitor.md
+        title: 8B - Notice a visitor
+      - id: 8C
+        file: 8C - Notice a moved object.md
+        title: 8C - Notice a moved object
+
+# Example orders only; learners can switch between groups at any time.
+recommended_paths:
+  body_first:
+    - 1A
+    - 2A
+    - 3A
+    - 4A
+    - 6A
+    - 7A
+  input_first:
+    - 1A
+    - 3D
+    - 4C
+    - 6A
+    - 7A
+  warning_first:
+    - 1A
+    - 4B
+    - 3F
+    - 6A
+    - 7A

@@ -1,0 +1,82 @@
+{
+  "banner.png": {
+    "sha256": "9bfda7965d96690848a496e03e33b1b56b8c087980eafec7b4a5ad5665c304fd",
+    "source": "instrument pathway copy"
+  },
+  "button-wiring.png": {
+    "sha256": "0f51f7161b35303b3d9475b25637bf3ba497024ee518e8581194388a1115c70b",
+    "source": "instrument pathway copy"
+  },
+  "buzzer-wiring.png": {
+    "sha256": "d86c3dd52aa0a88bc14e7d8a65b884e1b01b5470407018c160d0dd31f70f1f9c",
+    "source": "instrument pathway copy"
+  },
+  "capacitive-touch-wiring.png": {
+    "sha256": "3f638d367f5305134bf3910ef64b072de23367ae75f634c94dfb17ada7230e8f",
+    "source": "instrument pathway copy"
+  },
+  "distance-wiring.png": {
+    "sha256": "424e333fc0dc581d55898caf0c03727ec794bdf6fec2fd287513892e4dc6c4fb",
+    "source": "instrument pathway copy"
+  },
+  "ldr-wiring.png": {
+    "sha256": "bf9d9ad1014e69941a4d09a9450594d7335202b7dc17e1f4674406904cc6e109",
+    "source": "instrument pathway copy"
+  },
+  "led-wiring.png": {
+    "sha256": "f550a332103c2e640c817f08e82ef9417406dc8e1323ff41ecac85884f123c4c",
+    "source": "Skills Bricks published led-wiring.png diagram"
+  },
+  "line-sensor-wiring.png": {
+    "sha256": "bec6652390c2cab710f81ff08ec9f8446dc8f2d54f2b08edccd55fe7e1d0118e",
+    "source": "instrument pathway copy"
+  },
+  "passive-buzzer-wiring.png": {
+    "sha256": "d86c3dd52aa0a88bc14e7d8a65b884e1b01b5470407018c160d0dd31f70f1f9c",
+    "source": "instrument pathway copy"
+  },
+  "plug-in-pico.png": {
+    "sha256": "54f54d391bab415465f855afc705aea641f9f4cf65da8b5a4e182d28df935e68",
+    "source": "instrument pathway copy"
+  },
+  "potentiometer-wiring.png": {
+    "sha256": "12b11959767de431e1fd963796223aec85920fd0c622eb7e4f5df60601e7d17f",
+    "source": "instrument pathway copy"
+  },
+  "rgb-led-wiring.png": {
+    "sha256": "0b086077efe2572540610650ec3c23949429fa73eea061fd9189d7c14be5a21c",
+    "source": "Skills Bricks published rgb-led-wiring.png diagram"
+  },
+  "temperature-probe-wiring.png": {
+    "sha256": "6255b38beac83b93de1a600d56912177aefdaf82858312b2ef7b2c83a9763b76",
+    "source": "instrument pathway copy"
+  },
+  "temperature-sensor-wiring.png": {
+    "sha256": "b37e2d5e5e6feae4fbdcf4e9c55231201759afc69cfa9b833bc54de1d21ab113",
+    "source": "instrument pathway copy"
+  },
+  "thonny-install-package.jpg": {
+    "sha256": "d950599dc52d21a65a3c2e9c7bb6e7426281b57b7440942160c1329b70bcf091",
+    "source": "instrument pathway copy"
+  },
+  "thonny-manage-packages.jpg": {
+    "sha256": "66d3805dd5b5f56d254d064a7fa1f86bb7cbac7dd5fb356c7e91687b080d9db4",
+    "source": "instrument pathway copy"
+  },
+  "thonny-packages-picozero.jpg": {
+    "sha256": "e4d2713701141da5fdcc4e4c717fc8603acbf654d6adcf811cc55a54c0889515",
+    "source": "instrument pathway copy"
+  },
+  "thonny-switch-interpreter.jpg": {
+    "sha256": "f2fc6e7d964a0019febb177cfbebb5bd35a43a19d5abe02d798ec2b0cc205c8a",
+    "source": "instrument pathway copy"
+  },
+  "tilt-switch-wiring.png": {
+    "sha256": "809cf894f688a1c2d07aacd56a8e4c3679ce5123c593fc4e993a9f4ea81c86d3",
+    "source": "instrument pathway copy"
+  },
+  "toggle-switch-wiring.png": {
+    "sha256": "78ccc9266d1d0a110bbafb41d9f7c6ce8c6bd017da72e372289e236620a90011",
+    "source": "instrument pathway copy"
+  }
+}

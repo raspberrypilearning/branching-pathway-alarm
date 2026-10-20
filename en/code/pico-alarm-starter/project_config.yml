@@ -1,0 +1,4 @@
+name: "Pico Alarm starter"
+identifier: "pico-alarm-starter"
+type: 'python'
+build: false
