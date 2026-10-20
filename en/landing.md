@@ -4,7 +4,7 @@ Make an alarm with a Raspberry Pi Pico. It will **notice a change**, **give a wa
 
 First open the [starter project](resources/alarm.py) and complete [connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). Once its LED and ready message work on your real Pico, choose any part:
 
-- **Make its home:** craft a case or adapt an object.
+- **Build a case:** craft a case or adapt an object.
 - **Detect a change:** press, touch, tip, block light, move nearby and more. Choose one or several.
 - **Give a warning:** use a light, colours, a buzzer or a mixture.
 - **Decide when:** choose a trigger, add an arm switch, or change the warning pattern.

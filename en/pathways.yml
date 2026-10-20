@@ -11,7 +11,7 @@ groups:
         file: 1A - Connect and test your Pico.md
         title: 1A - Connect and test your Pico
   - id: 2
-    title: Make its home
+    title: Build a case
     options:
       - id: 2A
         file: 2A - Follow your own alarm idea.md
