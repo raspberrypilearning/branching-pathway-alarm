@@ -81,8 +81,8 @@ function navigation() {
   nav.innerHTML = `<div class="nav-links">
     ${navLink('home', 'Start', 'home', route === 'home')}
     ${navLink('step/1A', 'Test your Pico', 'pico', active === 'setup', ready() ? '<span class="nav-status" aria-label="Pico checked">✓</span>' : '')}
-    ${navLink('hub', 'Choose a part', 'grid', route === 'hub')}
     <span class="nav-label">YOUR ALARM · YOUR CHOICES</span>
+    ${navLink('hub', 'Choose a part', 'grid', route === 'hub')}
     ${stages().map(group => navLink(groupRoute(group), esc(group.title), group.icon, active === group.slug)).join('')}
     </div><div class="sidebar-note"><strong>Your route.</strong><p>Change parts whenever you like.</p></div>
     <a class="source-link" href="https://raspberrypifoundation.github.io/skills-bricks/?platform=pico" target="_blank" rel="noopener">Supported by Skills Bricks ↗</a>`;
