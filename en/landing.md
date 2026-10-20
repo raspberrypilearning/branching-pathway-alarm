@@ -10,4 +10,4 @@ First open the [starter project](resources/alarm.py) and complete [connect and t
 - **Decide when:** choose a trigger, add an arm switch, or change the warning pattern.
 - **Bring it together:** connect your chosen action to a warning, then test and reset it.
 
-The page numbers group choices; they are **not** a list to complete in order. You can craft, wire or code first after the Pico check. If a page needs a part you have not tested, follow its link back and return. The alarm ideas at the end are examples to borrow from, not builds to copy.
+The menu groups choices; it is **not** a list to complete in order. You can craft, wire or code first after the Pico check. If a page needs a part you have not tested, follow its link back and return. The alarm ideas at the end are examples to borrow from, not builds to copy.
