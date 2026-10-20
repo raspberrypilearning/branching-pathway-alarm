@@ -48,4 +48,4 @@ Detect a change in angle. A small ball inside the switch makes or breaks a conta
 
 Choose an angle that should trigger your alarm. Use `if tilted:` or `if not tilted:` to match it.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

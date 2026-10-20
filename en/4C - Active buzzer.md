@@ -39,4 +39,4 @@ An **active** buzzer has one built-in pitch. You can change its beep rhythm. Che
 >
 > Did you hear one steady pitch? Change the **length**, not its pitch, to make the warning yours. An active buzzer cannot play different notes.
 
-Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.
+Choose when it warns on the [Decide with code](6A%20-%20Connect%20your%20input%20and%20output.md) page.

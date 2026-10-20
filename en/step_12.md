@@ -36,4 +36,4 @@ A single LED can give a bright, simple warning.
 >
 > Did it light? If not, check which leg is long, the resistor, GP11 and GND. Try placing it where a player can see it.
 
-Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.
+Choose when it warns on the [Decide with code](6A%20-%20Connect%20your%20input%20and%20output.md) page.

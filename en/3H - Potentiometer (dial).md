@@ -48,4 +48,4 @@ Turn a dial to give the Pico a reading between about 0 and 1.
 
 Use the dial as a trigger, or let it adjust how sensitive another sensor is. You choose what the setting means.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

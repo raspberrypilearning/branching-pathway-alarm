@@ -50,4 +50,4 @@ Measure the distance to something in front of the sensor, without touching it.
 
 Choose whether nearer or further away should trigger your alarm. Change `0.3` (30 cm) or `<`, keeping the `is not None` check.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

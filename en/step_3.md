@@ -48,4 +48,4 @@ Detect a finger touching a pad with a TTP223 module.
 
 Choose what touch does: trigger the warning, arm it or reset it. Bare foil contacts use the [homemade switch](3A%20-%20Button%20or%20homemade%20switch.md) circuit.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

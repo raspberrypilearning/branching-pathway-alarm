@@ -56,7 +56,7 @@ function renderHome() {
   return `<section class="hero"><div class="hero-copy"><span class="eyebrow">BRANCHING PATHWAYS · RASPBERRY PI PICO</span><h1>What will your alarm notice?</h1><p>Make an alarm with parts you choose. Decide what it detects, how it warns and what it looks like.</p><div class="actions"><a class="button primary" href="${ready() ? '#hub' : '#step/1A'}">${ready() ? 'Choose a part' : 'Open the starter & test your Pico'} →</a></div><p class="small">Test your Pico first. Then make it yours.</p></div><div class="hero-art" aria-hidden="true"><div class="alarm-disk"><div class="alarm-light"></div><div class="alarm-base"></div></div><span class="spark spark-one">✦</span><span class="spark spark-two">✦</span><span class="hero-note">NOTICE<br>WARN<br>RESET</span></div></section><section class="choice-intro"><h2>After the Pico test, pick your path</h2><p>Try a sensor. Make a sound. Sketch a case. Start anywhere and mix your choices.</p><a href="#hub">See the choices →</a></section>`;
 }
 function renderHub() {
-  const hints = {'Make a case':'Choose a shape or material.','Detect a change':'Choose a button, switch or sensor.','Give a warning':'Light, colour or sound?','Decide with code':'Change the alarm’s rules.','Bring it together':'Connect your choices.','Test and Improve':'Test, change, test again.','Ideas to borrow':'Take one idea and make it yours.'};
+  const hints = {'Make a case':'Choose a shape or material.','Detect a change':'Choose a button, switch or sensor.','Give a warning':'Light, colour or sound?','Decide with code':'Join your input and output test scripts.','Test and Improve':'Test, change, test again.','Ideas to borrow':'Take one idea and make it yours.'};
   return `<div class="page-head"><span class="eyebrow">PICO CHECKED · YOUR ROUTE</span><h1>Where will you start?</h1><p>Choose parts for your own alarm. Start anywhere after the Pico test.</p></div><p class="first-alarm">The parts, rules and shape are yours to choose. Every section is open; the examples are optional.</p><div class="group-grid">${data.groups.filter(group => group.title !== 'Start here').map((group, index) => `<details class="group-card tone-${index % 5}"><summary><strong>${esc(group.title)}</strong><span aria-hidden="true">⌄</span></summary><p>${esc(hints[group.title] || '')}</p><div class="group-links">${group.options.map(option => `<a href="#step/${option.id}"><div>${esc(option.title)}${option.description ? `<small>${esc(option.description)}</small>` : ''}</div><span aria-hidden="true">↗</span></a>`).join('')}</div></details>`).join('')}</div>`;
 }
 function renderStep(id) {
@@ -128,7 +128,7 @@ document.querySelector('#project-file').addEventListener('change', async event =
 });
 window.addEventListener('hashchange', () => {render(); window.scrollTo(0, 0); main.focus({preventScroll:true});});
 try {
-  const response = await fetch('data/pages.json?v=5');
+  const response = await fetch('data/pages.json?v=6');
   if (!response.ok) throw Error('Page data unavailable');
   data = await response.json();
   try {const saved = localStorage.getItem(KEY); if (saved) project = restore(JSON.parse(saved));}

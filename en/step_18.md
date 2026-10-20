@@ -1,42 +1,54 @@
-## 5C - Change the warning pattern
+## 5B - Arm and reset your alarm
 
-Invent a flash or beep pattern. Start with the warning itself; you can add an input whenever you like.
+**Arm** means ready to detect. **Reset** means stop the warning. Choose how yours should work.
 
 > [!CAUTION]
 >
-> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Keep beeps short and comfortable.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring; use a separate GP pin for each part.
 
-## Try a rhythm
+## Choose what happens
 
-Tap it out. Long or short? Fast or slow? Choose a pattern someone will notice.
+Your alarm could always be ready, or wait for a switch or touch. Its warning could stop when the trigger goes away, or wait for a reset action.
+
+Try acting out the rule you want. You can design it before choosing components.
 
 <details>
-<summary>Try an example: a flashing LED</summary>
+<summary>Try an example: an arm switch, button and LED</summary>
 
 ### Wire it
 
-Use the [Skills Bricks LED circuit](https://raspberrypifoundation.github.io/skills-bricks/led/led-pico.html): GP11 through a 220 Ω resistor to the long LED leg; short leg to GND.
+Switch: COM to GP6, one outside leg to GND. Button: GP10 to GND. LED: GP11 through 220 Ω to its long leg, short leg to GND.
+
+![Toggle switch wiring from Skills Bricks](images/toggle-switch-wiring.png)
+
+![Button wiring from Skills Bricks](images/button-wiring.png)
 
 ![LED wiring from Skills Bricks](images/led-wiring.png)
 
 ### Try the code
 
+Here, the switch arms the alarm. Releasing the button or disarming stops the warning.
+
 ```python
-from picozero import LED
+from picozero import Switch, Button, LED
 from time import sleep
 
+arm = Switch(6)
+trigger = Button(10)
 warning = LED(11)
-for flash in range(4):
-    warning.on()
-    sleep(0.2)
-    warning.off()
-    sleep(0.3)
+
+while True:
+    if arm.is_closed and trigger.is_pressed:
+        warning.on()
+    else:
+        warning.off()
+    sleep(0.05)
 ```
 
-Change the two times or the number of flashes. For beeps, use the setup and wiring for your [active buzzer](4C%20-%20Active%20buzzer.md) or [passive buzzer](4D%20-%20Passive%20buzzer.md) instead.
+Use your chosen input’s reading and warning action to change this rule.
 
 </details>
 
 ## Test
 
-Try the pattern, or tap it to someone. Can they notice it? Once it is part of your alarm, check how quickly it stops when you reset it.
+Try or act out your trigger and reset. If you have an arm control, what happens when the alarm is disarmed?

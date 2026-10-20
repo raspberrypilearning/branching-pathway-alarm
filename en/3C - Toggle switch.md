@@ -48,4 +48,4 @@ Detect which way a toggle switch is set.
 
 Choose its job: trigger a warning, [arm the alarm](5B%20-%20Arm%20and%20reset%20your%20alarm.md) or select a mode.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

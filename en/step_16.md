@@ -1,45 +1,65 @@
-## 5A - Choose what counts as a trigger
+## 6A - Connect your input and output
 
-Choose the rule that sets off your alarm. You can start by inventing it, then try it with any input.
+Your input can detect a change. Your output can make a warning. **Now join their test scripts with a rule.**
 
 > [!CAUTION]
 >
-> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before changing wires.
+> Have your [input and output](landing.md) both worked on their own? Revisit their tests if needed, or explore the code now.
+>
+> Unplug before joining circuits. Give each signal its own GP pin; the circuits can share GND.
 
-## Choose a rule
+## Join your scripts
 
-- **Yes or no:** a button is pressed, a pad is touched or a switch changes position.
-- **Above or below:** a distance, light level or temperature passes a number you choose.
+Save copies of both tests. Make your combined program in `alarm.py`:
 
-Write it as **“When ______, warn me.”** Your component page has an `if` line to adapt.
+- **At the top:** keep the imports and component setup from both tests.
+- **Inside `while True:`:** take a new input reading each time, including any conversion or wait lines.
+- **Under your input’s `if` line:** replace the test message with your output’s warning command.
+- **Under `else:`:** stop the warning. Add a short `sleep` so the loop pauses between checks.
+
+Remove the output’s separate test run: your `if` and `else` now control it. Keep any pin numbers and settings you changed while testing.
 
 <details>
-<summary>Try an example: a light-level rule</summary>
+<summary>See how two tests become one program: button + LED</summary>
 
-### Wire it
+### Keep both circuits
 
-Use the [light sensor](3E%20-%20Light%20sensor%20%28LDR%29.md) circuit: LDR to 3V3, 10 kΩ resistor to GND, their join to GP27.
+Button: GP10 to GND. LED: GP11 through a 220 Ω resistor to its long leg; short leg to GND.
 
-![LDR wiring from Skills Bricks](images/ldr-wiring.png)
+![Button input wiring from Skills Bricks](images/button-wiring.png)
 
-### Try the code
+![LED warning wiring from Skills Bricks](images/led-wiring.png)
 
-This uses the [Skills Bricks LDR](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html) setup. Run it in light and shade:
+### Join the code
+
+The setup and reading come from the [button test](3A%20-%20Button%20or%20homemade%20switch.md). The warning commands come from the [LED test](4A%20-%20LED.md).
 
 ```python
-from picozero import AnalogInputDevice
+# Imports from both tests
+from picozero import Button, LED
+from time import sleep
 
-ldr = AnalogInputDevice(27)
-light = ldr.value
-print(light)
-if light < 0.5:
-    print("Warn me!")
+# Set up each component once
+button = Button(10)
+led = LED(11)
+
+while True:
+    # Read the input again each time
+    pressed = button.is_pressed
+
+    # Your rule connects input to output
+    if pressed:
+        led.on()
+    else:
+        led.off()
+
+    sleep(0.05)
 ```
 
-Change `<` to `>` for more light. Choose a number between your two readings.
+With your parts, keep their own setup, reading and warning commands in these positions. For an RGB LED, rename its `light` object to `warning` if your light sensor already uses `light` for a reading.
 
 </details>
 
 ## Test
 
-Try or act out both situations: one that should trigger your alarm and one that should not. Does your rule tell them apart?
+Trigger your input, then stop. Does the warning start and stop as you intended? If it warns at the wrong time, [change your trigger rule](5A%20-%20Choose%20what%20counts%20as%20a%20trigger.md).

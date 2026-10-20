@@ -48,4 +48,4 @@ Detect when two contacts meet or separate. Use a push button, foil or another ho
 
 Should meeting or separating the contacts trigger your alarm? Use `if pressed:` or `if not pressed:`. You choose where the contacts go.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

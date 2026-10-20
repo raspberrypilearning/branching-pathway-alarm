@@ -1,54 +1,45 @@
-## 5B - Arm and reset your alarm
+## 5A - Choose what counts as a trigger
 
-**Arm** means ready to detect. **Reset** means stop the warning. Choose how yours should work.
+Choose the rule that sets off your alarm. You can start by inventing it, then try it with any input.
 
 > [!CAUTION]
 >
-> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring; use a separate GP pin for each part.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before changing wires.
 
-## Choose what happens
+## Choose a rule
 
-Your alarm could always be ready, or wait for a switch or touch. Its warning could stop when the trigger goes away, or wait for a reset action.
+- **Yes or no:** a button is pressed, a pad is touched or a switch changes position.
+- **Above or below:** a distance, light level or temperature passes a number you choose.
 
-Try acting out the rule you want. You can design it before choosing components.
+Write it as **“When ______, warn me.”** Your component page has an `if` line to adapt.
 
 <details>
-<summary>Try an example: an arm switch, button and LED</summary>
+<summary>Try an example: a light-level rule</summary>
 
 ### Wire it
 
-Switch: COM to GP6, one outside leg to GND. Button: GP10 to GND. LED: GP11 through 220 Ω to its long leg, short leg to GND.
+Use the [light sensor](3E%20-%20Light%20sensor%20%28LDR%29.md) circuit: LDR to 3V3, 10 kΩ resistor to GND, their join to GP27.
 
-![Toggle switch wiring from Skills Bricks](images/toggle-switch-wiring.png)
-
-![Button wiring from Skills Bricks](images/button-wiring.png)
-
-![LED wiring from Skills Bricks](images/led-wiring.png)
+![LDR wiring from Skills Bricks](images/ldr-wiring.png)
 
 ### Try the code
 
-Here, the switch arms the alarm. Releasing the button or disarming stops the warning.
+This uses the [Skills Bricks LDR](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html) setup. Run it in light and shade:
 
 ```python
-from picozero import Switch, Button, LED
-from time import sleep
+from picozero import AnalogInputDevice
 
-arm = Switch(6)
-trigger = Button(10)
-warning = LED(11)
-
-while True:
-    if arm.is_closed and trigger.is_pressed:
-        warning.on()
-    else:
-        warning.off()
-    sleep(0.05)
+ldr = AnalogInputDevice(27)
+light = ldr.value
+print(light)
+if light < 0.5:
+    print("Warn me!")
 ```
 
-Use your chosen input’s reading and warning action to change this rule.
+Change `<` to `>` for more light. Choose a number between your two readings.
 
 </details>
 
 ## Test
 
-Try or act out your trigger and reset. If you have an arm control, what happens when the alarm is disarmed?
+Try or act out both situations: one that should trigger your alarm and one that should not. Does your rule tell them apart?

@@ -36,4 +36,4 @@ Mix red, green and blue light. You choose the colours and what they mean.
 >
 > Can you make two colours that someone can tell apart? Put a label or shape beside the light so colour is not the only clue.
 
-Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.
+Choose when it warns on the [Decide with code](6A%20-%20Connect%20your%20input%20and%20output.md) page.

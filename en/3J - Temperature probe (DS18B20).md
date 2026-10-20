@@ -54,4 +54,4 @@ Measure temperature in degrees Celsius with a DS18B20 probe.
 
 Choose warmer or cooler as your trigger. Set your own temperature in the `if` line and allow time for the probe to change.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

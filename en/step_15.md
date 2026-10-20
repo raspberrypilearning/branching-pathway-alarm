@@ -40,4 +40,4 @@ A **passive** buzzer can change pitch. Check the packet for *passive* or *extern
 >
 > Did the pitch change? If not, check whether you have an [active buzzer](4C%20-%20Active%20buzzer.md). You can make a [new warning pattern](5C%20-%20Change%20the%20warning%20pattern.md).
 
-Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.
+Choose when it warns on the [Decide with code](6A%20-%20Connect%20your%20input%20and%20output.md) page.

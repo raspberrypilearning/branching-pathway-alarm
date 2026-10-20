@@ -6,8 +6,7 @@ Open the [starter project](resources/alarm.py) and [connect and test your Pico](
 
 - **Detect a change:** choose a button, switch or sensor.
 - **Give a warning:** choose an LED, RGB LED or buzzer.
-- **Decide with code:** choose what sets it off and when it stops.
-- **Bring it together:** combine your chosen parts.
+- **Decide with code:** join your input and output test scripts with your own rule.
 - **Make a case:** choose your own shape and materials.
 - **Test and Improve:** try it, change something, try again.
 - **Ideas to borrow:** optional examples to spark your own idea.

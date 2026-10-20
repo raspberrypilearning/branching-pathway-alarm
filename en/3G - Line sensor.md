@@ -48,4 +48,4 @@ Detect a change between a light and dark surface with a KY-033 sensor.
 
 Choose which surface should trigger your alarm. Try `if on_line:` or `if not on_line:`; you choose what moves past the sensor.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

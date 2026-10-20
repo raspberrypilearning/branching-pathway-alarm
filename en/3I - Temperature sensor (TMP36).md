@@ -49,4 +49,4 @@ Measure temperature in degrees Celsius with a TMP36 sensor.
 
 Choose warmer or cooler as your trigger. Set a temperature you can reach in your test and use `>` or `<`.
 
-Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Ready? [Connect it to your chosen warning](6A%20-%20Connect%20your%20input%20and%20output.md).

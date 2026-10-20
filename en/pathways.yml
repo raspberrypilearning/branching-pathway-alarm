@@ -75,24 +75,26 @@ groups:
   - id: 5
     title: Decide with code
     options:
+      - id: 6A
+        file: 6A - Connect your input and output.md
+        title: 6A - Connect your input and output
+        description: Join your two test scripts
       - id: 5A
         file: 5A - Choose what counts as a trigger.md
         title: 5A - Choose what counts as a trigger
+        description: Change when the alarm triggers
       - id: 5B
         file: 5B - Arm and reset your alarm.md
         title: 5B - Arm and reset your alarm
+        description: Choose when it is ready and when it stops
       - id: 5C
         file: 5C - Change the warning pattern.md
         title: 5C - Change the warning pattern
-  - id: 6
-    title: Bring it together
-    options:
-      - id: 6A
-        file: 6A - Join one input and warning.md
-        title: 6A - Join one input and warning
+        description: Change the flash or beep rhythm
       - id: 6B
         file: 6B - Add another input or warning.md
         title: 6B - Add another input or warning
+        description: Give extra parts a job
   - id: 2
     title: Make a case
     options:

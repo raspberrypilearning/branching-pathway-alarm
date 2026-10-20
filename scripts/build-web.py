@@ -61,6 +61,9 @@ def inline(value: str, ids: dict[str, str]) -> str:
         if filename in ids:
             href = "#step/" + ids[filename]
             extra = " data-prereq"
+        elif filename == "landing.md":
+            href = "#hub"
+            extra = " data-prereq"
         elif target.startswith(("http://", "https://")):
             href = target
             extra = ' target="_blank" rel="noopener"'
