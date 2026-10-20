@@ -78,7 +78,7 @@ groups:
       - id: 6A
         file: 6A - Connect your input and output.md
         title: 6A - Connect your input and output
-        description: Join your two test scripts
+        description: Join your test scripts
       - id: 5A
         file: 5A - Choose what counts as a trigger.md
         title: 5A - Choose what counts as a trigger

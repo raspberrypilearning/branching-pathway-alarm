@@ -3,7 +3,7 @@
     "1": {"slug": "setup", "icon": "pico", "tone": "mint"},
     "3": {"slug": "detect", "icon": "dial", "tone": "mint", "subtitle": "10 ways to notice something", "description": "Press, touch, tilt or cast a shadow."},
     "4": {"slug": "warning", "icon": "speaker", "tone": "yellow", "subtitle": "Light, colour or sound", "description": "Choose how your alarm gets attention."},
-    "5": {"slug": "code", "icon": "connect", "tone": "purple", "subtitle": "Join your two test scripts", "description": "Choose what happens when something changes."},
+    "5": {"slug": "code", "icon": "connect", "tone": "purple", "subtitle": "Join your test scripts", "description": "Choose what happens when something changes."},
     "2": {"slug": "case", "icon": "shape", "tone": "pink", "subtitle": "Card, found objects, your own idea…", "description": "Make a home for the parts you choose."},
     "7": {"slug": "improve", "icon": "repeat", "tone": "orange", "subtitle": "Try it. Change it. Try again.", "description": "See what works and make it better."},
     "8": {"slug": "ideas", "icon": "spark", "tone": "cyan", "subtitle": "Borrow a spark for your own alarm", "description": "Take an idea and change the parts, rules or shape."}

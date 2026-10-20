@@ -122,14 +122,14 @@
       "slug": "code",
       "icon": "connect",
       "tone": "purple",
-      "subtitle": "Join your two test scripts",
+      "subtitle": "Join your test scripts",
       "description": "Choose what happens when something changes.",
       "options": [
         {
           "id": "6A",
           "title": "Connect your input and output",
           "icon": "connect",
-          "description": "Join your two test scripts"
+          "description": "Join your test scripts"
         },
         {
           "id": "5A",

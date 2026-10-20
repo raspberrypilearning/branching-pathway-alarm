@@ -194,7 +194,7 @@ document.querySelector('#project-file').addEventListener('change', async event =
 });
 window.addEventListener('hashchange', () => {render(); window.scrollTo(0, 0); main.focus({preventScroll:true});});
 try {
-  const response = await fetch('data/pages.json?v=7');
+  const response = await fetch('data/pages.json?v=8');
   if (!response.ok) throw Error('Page data unavailable');
   data = await response.json();
   try {const saved = localStorage.getItem(KEY); if (saved) project = restore(JSON.parse(saved));}
