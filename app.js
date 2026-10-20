@@ -84,7 +84,8 @@ function navigation() {
     ${navLink('hub', 'Choose a part', 'grid', route === 'hub')}
     <span class="nav-label">YOUR ALARM · YOUR CHOICES</span>
     ${stages().map(group => navLink(groupRoute(group), esc(group.title), group.icon, active === group.slug)).join('')}
-    </div><p class="sidebar-note">Test your Pico first.<br>Then jump between parts whenever you like.</p>`;
+    </div><div class="sidebar-note"><strong>Your route.</strong><p>Change parts whenever you like.</p></div>
+    <a class="source-link" href="https://raspberrypifoundation.github.io/skills-bricks/?platform=pico" target="_blank" rel="noopener">Supported by Skills Bricks ↗</a>`;
   const links = nav.querySelector('.nav-links');
   const current = nav.querySelector('[aria-current]');
   if (current && links.scrollWidth > links.clientWidth)
