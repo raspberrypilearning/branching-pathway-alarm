@@ -11,7 +11,7 @@ groups:
         file: 1A - Connect and test your Pico.md
         title: 1A - Connect and test your Pico
   - id: 2
-    title: Build a case
+    title: Make a case
     options:
       - id: 2A
         file: 2A - Follow your own alarm idea.md
@@ -71,7 +71,7 @@ groups:
         file: 4D - Make a warning tone.md
         title: 4D - Make a warning tone
   - id: 5
-    title: Decide when
+    title: Decide with code
     options:
       - id: 5A
         file: 5A - Choose what counts as a trigger.md
@@ -92,13 +92,13 @@ groups:
         file: 6B - Add another input or warning.md
         title: 6B - Add another input or warning
   - id: 7
-    title: Try and improve
+    title: Test and Improve
     options:
       - id: 7A
         file: 7A - Try it and improve it.md
         title: 7A - Try it and improve it
   - id: 8
-    title: Optional ideas to borrow
+    title: Ideas to borrow
     options:
       - id: 8A
         file: 8A - Guard a model treasure.md
