@@ -1,0 +1,58 @@
+{
+  "button-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/button-component.webp",
+    "sha256": "905b75369366bddb32bc8e850281c61c1a0750272f957f68a9d2d1e1b0c6b2a3"
+  },
+  "buzzer-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/buzzer-component.webp",
+    "sha256": "f0b09c66ceadf1fce4369bfa4edbc8a25ef8dd08bb114069fcc45806e8b6f584"
+  },
+  "capacitive-touch-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/capacitive-touch-component.webp",
+    "sha256": "4ea4053055350c1df53314e4c1b870e1bdad926eb1a40c77b5a751d5c0bd332a"
+  },
+  "distance-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/distance-component.webp",
+    "sha256": "81c2e83c67a5a564ccdde4e0836d59f1db6f8252c941bda850f20c00181fa12a"
+  },
+  "ldr-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/ldr-component.webp",
+    "sha256": "b67d307a4ef31a920e05fc1112683ac5f95f1d3bdd6c64a7a3193f89bf4ae448"
+  },
+  "led-component.png": {
+    "source": "skills-bricks/bricks/led/images/component-led.png",
+    "sha256": "d9b3a770e6f6b82060803b23a3357dfac371638302b1e835c4004fccf5a7fe05"
+  },
+  "line-sensor-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/line-sensor-component.webp",
+    "sha256": "14e9e50c852094c7801815a6458841c6307d7f8fbdef78953e1550d44499b60d"
+  },
+  "passive-buzzer-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/passive-buzzer-component.webp",
+    "sha256": "9c3c94f2bdbc409aafdb840c80b604b13754aeb0a557a9e162a2902799b3f0c3"
+  },
+  "potentiometer-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/potentiometer-component.webp",
+    "sha256": "d09e6ff7f7e4af7a09e95536fcc6c65af5b6c4c2a2181979c6d231ed9b567e16"
+  },
+  "rgb-led-component.png": {
+    "source": "skills-bricks/bricks/rgb-led/images/component-rgb-led.png",
+    "sha256": "c8d4208895e820dc5f364684b29d02112a458a8efaebbfa11b02acde584a8096"
+  },
+  "temperature-probe-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/temperature-probe-component.webp",
+    "sha256": "348bbbdd2e6c45af6fb87e342a5ee90f2060bd40270acbb2f2241cf360bd8306"
+  },
+  "temperature-sensor-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/temperature-sensor-component.webp",
+    "sha256": "9771edf783dab3aebb5bef7dd6a742d58b5f185f5ed788d54ae115b5d45f7ae8"
+  },
+  "tilt-switch-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/tilt-switch-component.webp",
+    "sha256": "d0ff57c9bf5d3b2746601c22cedd2c499f597a720d8584b210f85c89af2a36ac"
+  },
+  "toggle-switch-component.webp": {
+    "source": "branching-pathways-pico-instrument/assets/bricks/toggle-switch-component.webp",
+    "sha256": "81bfa13a5fecd4c711514f10cdc49e84bca4cce288fabb41f9f527269929cfeb"
+  }
+}

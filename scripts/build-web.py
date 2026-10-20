@@ -27,7 +27,7 @@ def routes() -> list[dict[str, str]]:
     option = None
     for line in raw.splitlines():
         if line.startswith("  - id: "):
-            current = {"title": "", "options": []}
+            current = {"id": line.partition(": ")[2], "title": "", "options": []}
             groups.append(current)
         elif current is not None and line.startswith("    title: "):
             current["title"] = line.partition(": ")[2]
@@ -131,7 +131,7 @@ def blocks(source: str, ids: dict[str, str]) -> str:
                 code.append(lines[at])
                 at += 1
             at += 1
-            output.append(f'<div class="code-wrap"><div class="code-head"><span>{html.escape(language or "Code")}</span><button class="copy-code" type="button">Copy code</button></div><pre><code>{html.escape(chr(10).join(code))}</code></pre></div>')
+            output.append(f'<div class="code-wrap"><div class="code-head"><span>{html.escape(language or "Code")}</span><button class="copy-code" type="button">Copy code</button></div><pre tabindex="0" aria-label="Code to try"><code>{html.escape(chr(10).join(code))}</code></pre></div>')
             continue
         if line.startswith("## "):
             tag = "h1" if first_heading else "h2"
@@ -161,6 +161,7 @@ def blocks(source: str, ids: dict[str, str]) -> str:
 
 def build() -> str:
     groups = routes()
+    presentation = json.loads((ROOT / "data/presentation.json").read_text())
     options = [option for group in groups for option in group["options"]]
     ids = {option["file"]: option["id"] for option in options}
     pages = {}
@@ -168,9 +169,25 @@ def build() -> str:
         page = EN / option["file"]
         body = page.read_text()
         body = re.sub(r"^## [0-9]+[A-Z] - ", "## ", body, count=1)
-        pages[option["id"]] = {"title": display_title(option["title"]), "html": blocks(body, ids)}
+        # Only unquoted level-two headings divide a lesson. Wiring, code and
+        # worked examples remain verbatim inside their original section.
+        chunks = re.split(r"^## (.+)\n", body, flags=re.M)
+        sections = [
+            {"title": chunks[index],
+             "key": re.sub(r"[^a-z0-9]+", "-", chunks[index].lower()).strip("-"),
+             "html": blocks(chunks[index + 1], ids)}
+            for index in range(3, len(chunks), 2)
+        ]
+        pages[option["id"]] = {
+            "title": display_title(option["title"]), "html": blocks(body, ids),
+            "intro": blocks(chunks[2], ids), "sections": sections,
+        }
     result = {"landing": blocks((EN / "landing.md").read_text(), ids),
-              "groups": [{"title": group["title"], "options": [{"id": o["id"], "title": display_title(o["title"]), **({"description": o["description"]} if o.get("description") else {})} for o in group["options"]]} for group in groups],
+              "groups": [{"title": group["title"], **presentation["groups"][group["id"]],
+                          "options": [{"id": o["id"], "title": display_title(o["title"]),
+                                       **presentation["options"].get(o["id"], {}),
+                                       **({"description": o["description"]} if o.get("description") else {})}
+                                      for o in group["options"]]} for group in groups],
               "pages": pages}
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n"
 

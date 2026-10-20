@@ -1,0 +1,39 @@
+{
+  "groups": {
+    "1": {"slug": "setup", "icon": "pico", "tone": "mint"},
+    "3": {"slug": "detect", "icon": "dial", "tone": "mint", "subtitle": "10 ways to notice something", "description": "Press, touch, tilt or cast a shadow."},
+    "4": {"slug": "warning", "icon": "speaker", "tone": "yellow", "subtitle": "Light, colour or sound", "description": "Choose how your alarm gets attention."},
+    "5": {"slug": "code", "icon": "connect", "tone": "purple", "subtitle": "Join your two test scripts", "description": "Choose what happens when something changes."},
+    "2": {"slug": "case", "icon": "shape", "tone": "pink", "subtitle": "Card, found objects, your own idea…", "description": "Make a home for the parts you choose."},
+    "7": {"slug": "improve", "icon": "repeat", "tone": "orange", "subtitle": "Try it. Change it. Try again.", "description": "See what works and make it better."},
+    "8": {"slug": "ideas", "icon": "spark", "tone": "cyan", "subtitle": "Borrow a spark for your own alarm", "description": "Take an idea and change the parts, rules or shape."}
+  },
+  "options": {
+    "3A": {"image": "button-component.webp"},
+    "3B": {"image": "capacitive-touch-component.webp"},
+    "3C": {"image": "toggle-switch-component.webp"},
+    "3D": {"image": "tilt-switch-component.webp"},
+    "3E": {"image": "ldr-component.webp"},
+    "3F": {"image": "distance-component.webp"},
+    "3G": {"image": "line-sensor-component.webp"},
+    "3H": {"image": "potentiometer-component.webp"},
+    "3I": {"image": "temperature-sensor-component.webp"},
+    "3J": {"image": "temperature-probe-component.webp"},
+    "4A": {"image": "led-component.png"},
+    "4B": {"image": "rgb-led-component.png"},
+    "4C": {"image": "buzzer-component.webp"},
+    "4D": {"image": "passive-buzzer-component.webp"},
+    "6A": {"icon": "connect"},
+    "5A": {"icon": "code"},
+    "5B": {"icon": "toggle"},
+    "5C": {"icon": "wave"},
+    "6B": {"icon": "plus"},
+    "2A": {"icon": "pencil", "description": "Sketch a shape and try it with your parts."},
+    "2B": {"icon": "shape", "description": "Cut, fold and join a quick first version."},
+    "2C": {"icon": "reuse", "description": "Turn something you have into something new."},
+    "7A": {"icon": "repeat", "description": "Try your idea, circuit or case. Pick one thing to change."},
+    "8A": {"icon": "treasure", "description": "Notice when someone opens a lid."},
+    "8B": {"icon": "wave", "description": "Notice something coming closer."},
+    "8C": {"icon": "tilt", "description": "Notice a change in position."}
+  }
+}

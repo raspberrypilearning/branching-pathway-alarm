@@ -7,6 +7,7 @@ import json
 import re
 import types
 import unittest
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +34,38 @@ class WebsiteTests(unittest.TestCase):
             for target in re.findall(r'<img src="([^"]+)"', page["html"]):
                 with self.subTest(route=route, image=target):
                     self.assertTrue((ROOT / target).is_file())
+
+    def test_section_layout_keeps_every_instruction_link_and_code_block(self):
+        class Content(HTMLParser):
+            def __init__(self, source):
+                super().__init__()
+                self.words = []
+                self.links = []
+                self.feed(source)
+
+            def handle_data(self, value):
+                self.words.extend(value.split())
+
+            def handle_starttag(self, tag, attrs):
+                if tag in ("a", "img"):
+                    self.links.append((tag, dict(attrs)))
+
+        for route, page in self.data["pages"].items():
+            with self.subTest(route=route):
+                laid_out = "<h1>" + page["title"] + "</h1>" + page["intro"]
+                laid_out += "".join("<h2>" + section["title"] + "</h2>" + section["html"]
+                                    for section in page["sections"])
+                original, presented = Content(page["html"]), Content(laid_out)
+                self.assertEqual(original.words, presented.words)
+                self.assertEqual(original.links, presented.links)
+
+    def test_all_components_have_local_preview_images(self):
+        component_groups = [g for g in self.data["groups"] if g["slug"] in ("detect", "warning")]
+        options = [option for group in component_groups for option in group["options"]]
+        self.assertEqual(len(options), 14)
+        for option in options:
+            with self.subTest(option=option["id"]):
+                self.assertTrue((ROOT / "images/components" / option["image"]).is_file())
 
     def test_gate_and_warning_copy_are_present(self):
         script = (ROOT / "app.js").read_text()

@@ -16,10 +16,13 @@ python3 scripts/sync-pathway-files.py --check
 python3 scripts/build-web.py
 python3 scripts/build-web.py --check
 python3 -m unittest discover -s tests -v
+node --test tests/navigation.test.mjs
 ```
 
 The checks compare the route manifest, metadata, flowchart, numbered copies and generated web pages; verify local links, copied diagrams, Skills Bricks snippets and Python syntax. The tests exercise example alarm rules with simulated components. A Pico and physical circuits still need classroom testing.
 
 The site is static: GitHub Pages publishes the root of `main`. To preview it locally, run `python3 -m http.server 4186` and open `http://127.0.0.1:4186/`. The browser records a learner's own confirmation of the Pico test; it cannot inspect the board. Progress and notes are saved only in that browser unless the learner downloads a project copy. The website shows descriptive route names while the Markdown filenames retain their project-format IDs.
+
+The web interface shares the instrument pathway's visual pattern: an illustrated start, stage cards, component picture cards and an always-available stage menu. `data/presentation.json` adds web routes, icons and card descriptions to the Markdown manifest. `scripts/build-web.py` splits each lesson at its existing headings so wiring and code can sit side by side without changing the source instructions. The original `#step/…` links and saved-project format remain supported.
 
 The [starter](en/resources/alarm.py) checks the Pico LED and picozero in Thonny before a learner picks a build route. Source and image provenance are in [SOURCES.md](SOURCES.md).
