@@ -4,7 +4,7 @@ Borrow this idea for a model shop, doorway or secret exhibit: warn when a hand g
 
 > [!CAUTION]
 >
-> Complete the [Pico test](1A%20-%20Connect%20and%20test%20your%20Pico.md), then test the [3.3 V-compatible distance sensor](3F%20-%20Notice%20someone%20nearby.md) and [RGB LED](4B%20-%20Change%20warning%20colours.md) separately. Do not use a 5 V Echo pin on a Pico GPIO.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Use a 3.3 V-compatible HC-SR04P; do not connect a 5 V Echo pin to a Pico GPIO.
 
 ## Step 1
 

@@ -1,40 +1,40 @@
-## 3B - Touch a pad
+## 3E - Light sensor (LDR)
 
-A light touch can trigger a secret alarm.
+Measure how light or dark it is with a light-dependent resistor (LDR).
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather a TTP223 touch module and three leads.
->
-> SIG goes to GP17, VCC to 3V3 OUT, and GND to GND.
->
-> ![Touch a pad wiring diagram from Skills Bricks](images/capacitive-touch-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/capacitive-touch/capacitive-touch-pico.html) in Thonny:
+> Gather an LDR, a 10 kΩ resistor and leads.
+>
+> Join the LDR and resistor at GP27. The LDR’s other leg goes to 3V3 OUT; the resistor’s other leg goes to GND.
+>
+> ![Light sensor (LDR) wiring diagram from Skills Bricks](images/ldr-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html) in Thonny:
 >
 > ```python
-> from picozero import TouchSensor
+> from picozero import AnalogInputDevice
 >
-> touch = TouchSensor(17)
+> ldr = AnalogInputDevice(27)
 >
-> touched = touch.is_touched
+> light = ldr.value
 > ```
 >
-> Add this underneath to see when the component detects an event:
+> Add this to try a trigger. You can change the `if` line:
 >
 > ```python
-> print(touched)
-> if touched:
+> print(light)
+> if light < 0.5:
 >     print("Alarm trigger detected!")
 > ```
 
@@ -42,8 +42,10 @@ A light touch can trigger a secret alarm.
 
 > [!TASK]
 >
-> Touch and release the pad. A bare foil or thread contact uses the switch page instead. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Cover and uncover it, running the code each time. With this wiring, darker gives a lower value.
 
 ## Make it yours
 
-Hide the pad behind thin card, then test that it still detects touch. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose light or darkness as your trigger. Change `<` to `>` for a higher reading, then choose a number between your two test readings.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

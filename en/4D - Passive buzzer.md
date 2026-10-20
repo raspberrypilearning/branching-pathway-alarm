@@ -1,4 +1,4 @@
-## 4D - Make a warning tone
+## 4D - Passive buzzer
 
 A **passive** buzzer can change pitch. Check the packet for *passive* or *external drive*; it can look like an active buzzer.
 
@@ -6,7 +6,7 @@ A **passive** buzzer can change pitch. Check the packet for *passive* or *extern
 >
 > Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Use one small **3.3 V GPIO-compatible** piezo buzzer on GP9 at a time.
 
-## Step 1
+## Wire it
 
 > [!TASK]
 >
@@ -14,7 +14,7 @@ A **passive** buzzer can change pitch. Check the packet for *passive* or *extern
 >
 > ![Passive buzzer wiring from Skills Bricks](images/passive-buzzer-wiring.png)
 
-## Step 2
+## Try the code
 
 > [!TASK]
 >
@@ -38,4 +38,6 @@ A **passive** buzzer can change pitch. Check the packet for *passive* or *extern
 
 > [!TASK]
 >
-> Did the pitch change? If not, check whether you have an [active buzzer](4C%20-%20Sound%20an%20active%20buzzer.md). You can make a [new warning pattern](5C%20-%20Change%20the%20warning%20pattern.md).
+> Did the pitch change? If not, check whether you have an [active buzzer](4C%20-%20Active%20buzzer.md). You can make a [new warning pattern](5C%20-%20Change%20the%20warning%20pattern.md).
+
+Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.

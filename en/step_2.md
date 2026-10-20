@@ -1,27 +1,51 @@
-## 2A - Follow your own alarm idea
+## 3A - Button or homemade switch
 
-What change do you want to notice? A lid opening, a hand approaching, an object moving or something else?
+Detect when two contacts meet or separate. Use a push button, foil or another homemade switch.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Do that before testing any circuit. You can sketch now and return.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Finish this sentence: **When ______ happens, my alarm will ______.** Decide how someone will reset it.
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Try a quick shape or position. Leave room for the Pico, USB cable, input wires and warning light or buzzer. Keep the circuit removable while you test.
+> Gather a push button or foil and a card spacer.
+>
+> Connect GP10 through the switch to GND. A four-leg button has joined pairs: follow the picture.
+>
+> ![Button or homemade switch wiring diagram from Skills Bricks](images/button-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/button/button-pico.html) in Thonny:
+>
+> ```python
+> from picozero import Button
+>
+> button = Button(10)
+>
+> pressed = button.is_pressed
+> ```
+>
+> Add this to try a trigger. You can change the `if` line:
+>
+> ```python
+> print(pressed)
+> if pressed:
+>     print("Alarm trigger detected!")
+> ```
 
 ## Test
 
 > [!TASK]
 >
-> Act out the trigger and the reset. Could another person tell when the alarm is armed and when it has warned them?
+> Press and release, or join and separate your contacts. Run the code each time: can you get both `True` and `False`?
 
-Choose any input in group 3 and any warning in group 4. Their pages have the wiring and code.
+## Make it yours
+
+Should meeting or separating the contacts trigger your alarm? Use `if pressed:` or `if not pressed:`. You choose where the contacts go.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

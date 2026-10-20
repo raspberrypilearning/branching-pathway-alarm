@@ -4,7 +4,7 @@ Borrow this idea, change it, or ignore it. A model chest could warn when its lid
 
 > [!CAUTION]
 >
-> Complete the [Pico test](1A%20-%20Connect%20and%20test%20your%20Pico.md), then test the [foil contact](3A%20-%20Press%20or%20separate%20contacts.md) and [LED](4A%20-%20Flash%20one%20LED.md) before joining them.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Keep the 220 Ω resistor in the LED circuit.
 
 ## Step 1
 

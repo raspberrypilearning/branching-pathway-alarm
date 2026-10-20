@@ -1,4 +1,4 @@
-## 2C - Adapt an object
+## 2C - Reuse an object
 
 A box, bag, model or toy can become the alarm's home.
 
@@ -24,4 +24,4 @@ A box, bag, model or toy can become the alarm's home.
 >
 > Move or open the object. Can you put the input where it will detect that change reliably?
 
-Choose an input from group 3 and follow its diagram before attaching it permanently.
+Use your chosen input’s diagram to plan where it will fit. Keep it easy to move while you experiment.

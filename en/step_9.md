@@ -1,40 +1,40 @@
-## 3E - Watch the light
+## 3H - Potentiometer (dial)
 
-A shadow or sudden light can show that a cover has moved.
+Turn a dial to give the Pico a reading between about 0 and 1.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather an LDR, a 10 kΩ resistor and leads.
->
-> Join the LDR and resistor at GP27. The LDR’s other leg goes to 3V3 OUT; the resistor’s other leg goes to GND.
->
-> ![Light sensor wiring diagram from Skills Bricks](images/ldr-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html) in Thonny:
+> Gather a 10 kΩ potentiometer and three leads.
+>
+> One end goes to GND, the middle to GP26, and the other end to 3V3 OUT. Check your dial’s leg order.
+>
+> ![Potentiometer (dial) wiring diagram from Skills Bricks](images/potentiometer-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/potentiometer/potentiometer-pico.html) in Thonny:
 >
 > ```python
-> from picozero import AnalogInputDevice
+> from picozero import Pot
 >
-> ldr = AnalogInputDevice(27)
+> pot = Pot(26)
 >
-> light = ldr.value
+> setting = pot.value
 > ```
 >
-> Add this underneath to see when the component detects an event:
+> Add this to try a trigger. You can change the `if` line:
 >
 > ```python
-> print(light)
-> if light < 0.5:
+> print(setting)
+> if setting > 0.5:
 >     print("Alarm trigger detected!")
 > ```
 
@@ -42,8 +42,10 @@ A shadow or sudden light can show that a cover has moved.
 
 > [!TASK]
 >
-> Cover and uncover it. With this wiring, darker gives a lower value. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Turn gently and run again at different positions. What are your lowest and highest readings?
 
 ## Make it yours
 
-Hide it in a box to notice an opened lid: change `<` to `>` so light triggers it. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Use the dial as a trigger, or let it adjust how sensitive another sensor is. You choose what the setting means.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

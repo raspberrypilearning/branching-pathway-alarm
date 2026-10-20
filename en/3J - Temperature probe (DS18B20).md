@@ -1,12 +1,12 @@
-## 3J - Check warm or cool
+## 3J - Temperature probe (DS18B20)
 
-A sealed probe can compare warm and cool water slowly.
+Measure temperature in degrees Celsius with a DS18B20 probe.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
+## Wire it
 
 > [!TASK]
 >
@@ -14,9 +14,9 @@ A sealed probe can compare warm and cool water slowly.
 >
 > VDD goes to 3V3, DQ to GP22, GND to GND. Put 4.7 kΩ between DQ and 3V3. Check your probe’s wire colours.
 >
-> ![Explore warm and cool wiring diagram from Skills Bricks](images/temperature-probe-wiring.png)
+> ![Temperature probe (DS18B20) wiring diagram from Skills Bricks](images/temperature-probe-wiring.png)
 
-## Step 2
+## Try the code
 
 > [!TASK]
 >
@@ -37,7 +37,7 @@ A sealed probe can compare warm and cool water slowly.
 > print(temperature)
 > ```
 >
-> Add this underneath to see when the component detects an event:
+> Add this to try a trigger. You can change the `if` line:
 >
 > ```python
 > if temperature > 25:
@@ -48,8 +48,10 @@ A sealed probe can compare warm and cool water slowly.
 
 > [!TASK]
 >
-> Wait for each new reading. Only the sealed tip goes in water; keep the Pico and connections dry. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Run again to get a new reading. Only a sealed, waterproof tip goes in water; keep the Pico and connections dry.
 
 ## Make it yours
 
-Make a warm/cool warning experiment; a probe needs time to change. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose warmer or cooler as your trigger. Set your own temperature in the `if` line and allow time for the probe to change.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

@@ -1,27 +1,51 @@
-## 2B - Fold a home for it
+## 3B - Touch sensor
 
-Card and paper can hide the circuit or make the warning more visible.
+Detect a finger touching a pad with a TTP223 module.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Do that before testing the circuit. You can fold a model now.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Fold a card case or stand. Mark where the input will sense a change and where someone can see or hear the warning.
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Leave an opening for the USB cable and a flap for fixing wires. Keep metal foil contacts apart until the action you want makes them meet.
+> Gather a TTP223 touch module and three leads.
+>
+> SIG goes to GP17, VCC to 3V3 OUT, and GND to GND.
+>
+> ![Touch sensor wiring diagram from Skills Bricks](images/capacitive-touch-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/capacitive-touch/capacitive-touch-pico.html) in Thonny:
+>
+> ```python
+> from picozero import TouchSensor
+>
+> touch = TouchSensor(17)
+>
+> touched = touch.is_touched
+> ```
+>
+> Add this to try a trigger. You can change the `if` line:
+>
+> ```python
+> print(touched)
+> if touched:
+>     print("Alarm trigger detected!")
+> ```
 
 ## Test
 
 > [!TASK]
 >
-> Can you reach the Pico without tearing the case? Can the input still sense what it needs to sense?
+> Touch and release the pad. Run the code each time: can you get both `True` and `False`?
 
-You can change the shape once the circuit works.
+## Make it yours
+
+Choose what touch does: trigger the warning, arm it or reset it. Bare foil contacts use the [homemade switch](3A%20-%20Button%20or%20homemade%20switch.md) circuit.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

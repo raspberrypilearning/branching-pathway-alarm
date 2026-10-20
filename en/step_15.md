@@ -1,37 +1,43 @@
-## 4A - Flash one LED
+## 4D - Passive buzzer
 
-A single LED can give a bright, simple warning.
+A **passive** buzzer can change pitch. Check the packet for *passive* or *external drive*; it can look like an active buzzer.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Test the LED alone before adding an input.
+> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Use one small **3.3 V GPIO-compatible** piezo buzzer on GP9 at a time.
 
-## Step 1
-
-> [!TASK]
->
-> Use an LED and a **220 Ω resistor**. Connect **GP11 → resistor → long LED leg** and **short leg → GND**. The resistor must stay in the circuit.
->
-> ![LED and resistor wiring from Skills Bricks](images/led-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Try the [Skills Bricks LED code](https://raspberrypifoundation.github.io/skills-bricks/led/led-pico.html):
+> Connect buzzer **+ → GP9** and **− → GND**.
+>
+> ![Passive buzzer wiring from Skills Bricks](images/passive-buzzer-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Try the [Skills Bricks passive-buzzer code](https://raspberrypifoundation.github.io/skills-bricks/passive-buzzer/passive-buzzer-pico.html):
 >
 > ```python
-> from picozero import LED
+> from picozero import PWMBuzzer
 >
-> led = LED(11)
+> # GP9, 2000 Hz, 50% duty
+> buzzer = PWMBuzzer(9, 2000, 32768)
 >
-> led.on()
+> buzzer.on()
+> from time import sleep
+> sleep(0.25)
+> buzzer.off()
 > ```
 >
-> Add `led.off()` after looking at it. In your alarm, `if triggered:` can turn the LED on; `else:` can turn it off.
+> Change `2000` to `1000` before running again to hear a different pitch.
 
 ## Test
 
 > [!TASK]
 >
-> Did it light? If not, check which leg is long, the resistor, GP11 and GND. Try placing it where a player can see it.
+> Did the pitch change? If not, check whether you have an [active buzzer](4C%20-%20Active%20buzzer.md). You can make a [new warning pattern](5C%20-%20Change%20the%20warning%20pattern.md).
+
+Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.

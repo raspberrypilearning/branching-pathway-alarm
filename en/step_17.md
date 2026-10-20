@@ -1,40 +1,54 @@
-## 4C - Sound an active buzzer
+## 5B - Arm and reset your alarm
 
-An **active** buzzer has one built-in pitch. You can change its beep rhythm. Check the packet for *active* or *built-in oscillator*.
+**Arm** means ready to detect. **Reset** means stop the warning. Choose how yours should work.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Use a small **3.3 V GPIO-compatible** buzzer and unplug before wiring.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring; use a separate GP pin for each part.
 
-## Step 1
+## Choose what happens
 
-> [!TASK]
->
-> Connect buzzer **+ → GP9** and **− → GND**.
->
-> ![Active buzzer wiring from Skills Bricks](images/buzzer-wiring.png)
+Your alarm could always be ready, or wait for a switch or touch. Its warning could stop when the trigger goes away, or wait for a reset action.
 
-## Step 2
+Try acting out the rule you want. You can design it before choosing components.
 
-> [!TASK]
->
-> Try the [Skills Bricks active-buzzer code](https://raspberrypifoundation.github.io/skills-bricks/buzzer/buzzer-pico.html):
->
-> ```python
-> from picozero import Buzzer
->
-> buzzer = Buzzer(9)
->
-> buzzer.on()
-> from time import sleep
-> sleep(0.25)
-> buzzer.off()
-> ```
->
-> In an alarm, `if triggered:` can turn it on; `else:` can turn it off.
+<details>
+<summary>Try an example: an arm switch, button and LED</summary>
+
+### Wire it
+
+Switch: COM to GP6, one outside leg to GND. Button: GP10 to GND. LED: GP11 through 220 Ω to its long leg, short leg to GND.
+
+![Toggle switch wiring from Skills Bricks](images/toggle-switch-wiring.png)
+
+![Button wiring from Skills Bricks](images/button-wiring.png)
+
+![LED wiring from Skills Bricks](images/led-wiring.png)
+
+### Try the code
+
+Here, the switch arms the alarm. Releasing the button or disarming stops the warning.
+
+```python
+from picozero import Switch, Button, LED
+from time import sleep
+
+arm = Switch(6)
+trigger = Button(10)
+warning = LED(11)
+
+while True:
+    if arm.is_closed and trigger.is_pressed:
+        warning.on()
+    else:
+        warning.off()
+    sleep(0.05)
+```
+
+Use your chosen input’s reading and warning action to change this rule.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Did you hear one steady pitch? Change the **length**, not its pitch, to make the warning yours. An active buzzer cannot play different notes.
+Try or act out your trigger and reset. If you have an arm control, what happens when the alarm is disarmed?

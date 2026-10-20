@@ -1,41 +1,42 @@
-## 4D - Make a warning tone
+## 5C - Change the warning pattern
 
-A **passive** buzzer can change pitch. Check the packet for *passive* or *external drive*; it can look like an active buzzer.
+Invent a flash or beep pattern. Start with the warning itself; you can add an input whenever you like.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Use one small **3.3 V GPIO-compatible** piezo buzzer on GP9 at a time.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Keep beeps short and comfortable.
 
-## Step 1
+## Try a rhythm
 
-> [!TASK]
->
-> Connect buzzer **+ → GP9** and **− → GND**.
->
-> ![Passive buzzer wiring from Skills Bricks](images/passive-buzzer-wiring.png)
+Tap it out. Long or short? Fast or slow? Choose a pattern someone will notice.
 
-## Step 2
+<details>
+<summary>Try an example: a flashing LED</summary>
 
-> [!TASK]
->
-> Try the [Skills Bricks passive-buzzer code](https://raspberrypifoundation.github.io/skills-bricks/passive-buzzer/passive-buzzer-pico.html):
->
-> ```python
-> from picozero import PWMBuzzer
->
-> # GP9, 2000 Hz, 50% duty
-> buzzer = PWMBuzzer(9, 2000, 32768)
->
-> buzzer.on()
-> from time import sleep
-> sleep(0.25)
-> buzzer.off()
-> ```
->
-> Change `2000` to `1000` before running again to hear a different pitch.
+### Wire it
+
+Use the [Skills Bricks LED circuit](https://raspberrypifoundation.github.io/skills-bricks/led/led-pico.html): GP11 through a 220 Ω resistor to the long LED leg; short leg to GND.
+
+![LED wiring from Skills Bricks](images/led-wiring.png)
+
+### Try the code
+
+```python
+from picozero import LED
+from time import sleep
+
+warning = LED(11)
+for flash in range(4):
+    warning.on()
+    sleep(0.2)
+    warning.off()
+    sleep(0.3)
+```
+
+Change the two times or the number of flashes. For beeps, use the setup and wiring for your [active buzzer](4C%20-%20Active%20buzzer.md) or [passive buzzer](4D%20-%20Passive%20buzzer.md) instead.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Did the pitch change? If not, check whether you have an [active buzzer](4C%20-%20Sound%20an%20active%20buzzer.md). You can make a [new warning pattern](5C%20-%20Change%20the%20warning%20pattern.md).
+Try the pattern, or tap it to someone. Can they notice it? Once it is part of your alarm, check how quickly it stops when you reset it.

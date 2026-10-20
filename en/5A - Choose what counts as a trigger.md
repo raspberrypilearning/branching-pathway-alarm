@@ -1,37 +1,45 @@
 ## 5A - Choose what counts as a trigger
 
-Your alarm decides when a reading is *enough* to warn someone. Choose your own line.
+Choose the rule that sets off your alarm. You can start by inventing it, then try it with any input.
 
 > [!CAUTION]
 >
-> First [test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md) and [test the input](3E%20-%20Watch%20the%20light.md) you want to use. A reading from an untested sensor can make the alarm seem broken.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before changing wires.
 
-## Step 1
+## Choose a rule
 
-> [!TASK]
->
-> Here is the [Skills Bricks light-sensor circuit](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html). Read your own sensor in its usual place, then while you trigger it.
->
-> ![LDR wiring from Skills Bricks](images/ldr-wiring.png)
+- **Yes or no:** a button is pressed, a pad is touched or a switch changes position.
+- **Above or below:** a distance, light level or temperature passes a number you choose.
 
-## Step 2
+Write it as **“When ______, warn me.”** Your component page has an `if` line to adapt.
 
-> [!TASK]
->
-> Put your trigger value between those two readings. For an LDR wired as shown, darker usually gives a smaller number:
->
-> ```python
-> from picozero import AnalogInputDevice
->
-> ldr = AnalogInputDevice(27)
-> if ldr.value < 0.5:
->     print("Too dark: warn someone!")
-> ```
->
-> Use `>` to notice a lid opening into light. For another sensor, keep its wiring and reading from its page; change only the test inside `if`.
+<details>
+<summary>Try an example: a light-level rule</summary>
+
+### Wire it
+
+Use the [light sensor](3E%20-%20Light%20sensor%20%28LDR%29.md) circuit: LDR to 3V3, 10 kΩ resistor to GND, their join to GP27.
+
+![LDR wiring from Skills Bricks](images/ldr-wiring.png)
+
+### Try the code
+
+This uses the [Skills Bricks LDR](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html) setup. Run it in light and shade:
+
+```python
+from picozero import AnalogInputDevice
+
+ldr = AnalogInputDevice(27)
+light = ldr.value
+print(light)
+if light < 0.5:
+    print("Warn me!")
+```
+
+Change `<` to `>` for more light. Choose a number between your two readings.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Try the ordinary situation and the trigger three times each. Adjust `0.5` until the message appears only when you want it. Then [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Try or act out both situations: one that should trigger your alarm and one that should not. Does your rule tell them apart?

@@ -10,66 +10,68 @@ groups:
       - id: 1A
         file: 1A - Connect and test your Pico.md
         title: 1A - Connect and test your Pico
-  - id: 2
-    title: Make a case
-    options:
-      - id: 2A
-        file: 2A - Follow your own alarm idea.md
-        title: 2A - Follow your own alarm idea
-      - id: 2B
-        file: 2B - Fold a home for it.md
-        title: 2B - Fold a home for it
-      - id: 2C
-        file: 2C - Adapt an object.md
-        title: 2C - Adapt an object
   - id: 3
     title: Detect a change
     options:
       - id: 3A
-        file: 3A - Press or separate contacts.md
-        title: 3A - Press or separate contacts
+        file: 3A - Button or homemade switch.md
+        title: 3A - Button or homemade switch
+        description: Contacts meeting or separating
       - id: 3B
-        file: 3B - Touch a pad.md
-        title: 3B - Touch a pad
+        file: 3B - Touch sensor.md
+        title: 3B - Touch sensor
+        description: A finger touching a pad
       - id: 3C
-        file: 3C - Flip a switch.md
-        title: 3C - Flip a switch
+        file: 3C - Toggle switch.md
+        title: 3C - Toggle switch
+        description: A switch changing position
       - id: 3D
-        file: 3D - Tip or move it.md
-        title: 3D - Tip or move it
+        file: 3D - Tilt switch.md
+        title: 3D - Tilt switch
+        description: A change in angle
       - id: 3E
-        file: 3E - Watch the light.md
-        title: 3E - Watch the light
+        file: 3E - Light sensor (LDR).md
+        title: 3E - Light sensor (LDR)
+        description: Light or darkness
       - id: 3F
-        file: 3F - Notice someone nearby.md
-        title: 3F - Notice someone nearby
+        file: 3F - Ultrasonic distance sensor.md
+        title: 3F - Ultrasonic distance sensor
+        description: Something nearer or further away
       - id: 3G
-        file: 3G - Cross a marked line.md
-        title: 3G - Cross a marked line
+        file: 3G - Line sensor.md
+        title: 3G - Line sensor
+        description: A light or dark surface
       - id: 3H
-        file: 3H - Turn a dial.md
-        title: 3H - Turn a dial
+        file: 3H - Potentiometer (dial).md
+        title: 3H - Potentiometer (dial)
+        description: A dial turning
       - id: 3I
-        file: 3I - Notice warmth.md
-        title: 3I - Notice warmth
+        file: 3I - Temperature sensor (TMP36).md
+        title: 3I - Temperature sensor (TMP36)
+        description: Warmer or cooler air
       - id: 3J
-        file: 3J - Check warm or cool.md
-        title: 3J - Check warm or cool
+        file: 3J - Temperature probe (DS18B20).md
+        title: 3J - Temperature probe (DS18B20)
+        description: A warmer or cooler probe
   - id: 4
     title: Give a warning
     options:
       - id: 4A
-        file: 4A - Flash one LED.md
-        title: 4A - Flash one LED
+        file: 4A - LED.md
+        title: 4A - LED
+        description: One light, on or off
       - id: 4B
-        file: 4B - Change warning colours.md
-        title: 4B - Change warning colours
+        file: 4B - RGB LED.md
+        title: 4B - RGB LED
+        description: Light in colours you choose
       - id: 4C
-        file: 4C - Sound an active buzzer.md
-        title: 4C - Sound an active buzzer
+        file: 4C - Active buzzer.md
+        title: 4C - Active buzzer
+        description: Beeps at one pitch
       - id: 4D
-        file: 4D - Make a warning tone.md
-        title: 4D - Make a warning tone
+        file: 4D - Passive buzzer.md
+        title: 4D - Passive buzzer
+        description: Sounds with changing pitch
   - id: 5
     title: Decide with code
     options:
@@ -91,6 +93,18 @@ groups:
       - id: 6B
         file: 6B - Add another input or warning.md
         title: 6B - Add another input or warning
+  - id: 2
+    title: Make a case
+    options:
+      - id: 2A
+        file: 2A - Design your own case.md
+        title: 2A - Design your own case
+      - id: 2B
+        file: 2B - Card and paper.md
+        title: 2B - Card and paper
+      - id: 2C
+        file: 2C - Reuse an object.md
+        title: 2C - Reuse an object
   - id: 7
     title: Test and Improve
     options:

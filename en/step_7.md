@@ -1,40 +1,42 @@
-## 3C - Flip a switch
+## 3F - Ultrasonic distance sensor
 
-A toggle can trigger the alarm or arm it.
+Measure the distance to something in front of the sensor, without touching it.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather an SPDT toggle switch and two leads.
->
-> Connect COM (centre leg) to GP6 and one outside leg to GND. Leave the other outside leg unconnected.
->
-> ![Flip a switch wiring diagram from Skills Bricks](images/toggle-switch-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/toggle-switch/toggle-switch-pico.html) in Thonny:
+> Gather a 3.3 V-compatible HC-SR04P ultrasonic sensor and four leads.
+>
+> Trig goes to GP20, Echo to GP21, VCC to 3V3 OUT and GND to GND. Use the HC-SR04P, not a 5 V Echo module.
+>
+> ![Ultrasonic distance sensor wiring diagram from Skills Bricks](images/distance-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/distance/distance-pico.html) in Thonny:
 >
 > ```python
-> from picozero import Switch
+> from picozero import DistanceSensor
 >
-> mode = Switch(6)
+> sensor = DistanceSensor(
+>     echo=21, trigger=20
+> )
 >
-> mode_two = mode.is_closed
+> distance = sensor.distance
 > ```
 >
-> Add this underneath to see when the component detects an event:
+> Add this to try a trigger. You can change the `if` line:
 >
 > ```python
-> print(mode_two)
-> if mode_two:
+> print(distance)
+> if distance is not None and distance < 0.3:
 >     print("Alarm trigger detected!")
 > ```
 
@@ -42,8 +44,10 @@ A toggle can trigger the alarm or arm it.
 
 > [!TASK]
 >
-> Flip the switch each way and run again. Use it to choose an armed mode. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Move an object nearer and further away, running again each time. Readings are in metres; `None` means no echo.
 
 ## Make it yours
 
-Use this as an arm switch on the [arm and reset](5B%20-%20Arm%20and%20reset%20your%20alarm.md) page, or treat a flipped switch as the event. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose whether nearer or further away should trigger your alarm. Change `0.3` (30 cm) or `<`, keeping the `is not None` check.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

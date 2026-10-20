@@ -1,43 +1,54 @@
 ## 5B - Arm and reset your alarm
 
-Add an **arm switch** so your alarm only watches for a trigger when you choose.
+**Arm** means ready to detect. **Reset** means stop the warning. Choose how yours should work.
 
 > [!CAUTION]
 >
-> First [test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md), [toggle switch](3C%20-%20Flip%20a%20switch.md), [trigger input](3A%20-%20Press%20or%20separate%20contacts.md) and [warning](4A%20-%20Flash%20one%20LED.md). Unplug before joining circuits.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring; use a separate GP pin for each part.
 
-## Step 1
+## Choose what happens
 
-> [!TASK]
->
-> Keep the [Skills Bricks switch wiring](https://raspberrypifoundation.github.io/skills-bricks/toggle-switch/toggle-switch-pico.html): COM to GP6, one outside leg to GND.
->
-> ![Arm switch wiring from Skills Bricks](images/toggle-switch-wiring.png)
+Your alarm could always be ready, or wait for a switch or touch. Its warning could stop when the trigger goes away, or wait for a reset action.
 
-## Step 2
+Try acting out the rule you want. You can design it before choosing components.
 
-> [!TASK]
->
-> This example uses a button on GP10 and an LED on GP11. The warning stops when you disarm **or** release the button; that is its reset.
->
-> ```python
-> from picozero import Switch, Button, LED
-> from time import sleep
->
-> arm = Switch(6)
-> trigger = Button(10)
-> warning = LED(11)
->
-> while True:
->     if arm.is_closed and trigger.is_pressed:
->         warning.on()
->     else:
->         warning.off()
->     sleep(0.05)
-> ```
+<details>
+<summary>Try an example: an arm switch, button and LED</summary>
+
+### Wire it
+
+Switch: COM to GP6, one outside leg to GND. Button: GP10 to GND. LED: GP11 through 220 Ω to its long leg, short leg to GND.
+
+![Toggle switch wiring from Skills Bricks](images/toggle-switch-wiring.png)
+
+![Button wiring from Skills Bricks](images/button-wiring.png)
+
+![LED wiring from Skills Bricks](images/led-wiring.png)
+
+### Try the code
+
+Here, the switch arms the alarm. Releasing the button or disarming stops the warning.
+
+```python
+from picozero import Switch, Button, LED
+from time import sleep
+
+arm = Switch(6)
+trigger = Button(10)
+warning = LED(11)
+
+while True:
+    if arm.is_closed and trigger.is_pressed:
+        warning.on()
+    else:
+        warning.off()
+    sleep(0.05)
+```
+
+Use your chosen input’s reading and warning action to change this rule.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Try all four combinations: armed/disarmed and button pressed/released. Decide whether your alarm should reset automatically like this, or need a separate reset action.
+Try or act out your trigger and reset. If you have an arm control, what happens when the alarm is disarmed?

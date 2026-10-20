@@ -1,27 +1,51 @@
-## 2C - Adapt an object
+## 3C - Toggle switch
 
-A box, bag, model or toy can become the alarm's home.
+Detect which way a toggle switch is set.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Do that before testing the circuit. You can choose an object now.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Pick an object and decide what change it should notice. Try the movement before fixing any electronics to it.
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Support the Pico on removable card. Keep the USB socket accessible. Cover any loose metal that could touch the circuit by accident.
+> Gather an SPDT toggle switch and two leads.
+>
+> Connect COM (centre leg) to GP6 and one outside leg to GND. Leave the other outside leg unconnected.
+>
+> ![Toggle switch wiring diagram from Skills Bricks](images/toggle-switch-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/toggle-switch/toggle-switch-pico.html) in Thonny:
+>
+> ```python
+> from picozero import Switch
+>
+> mode = Switch(6)
+>
+> mode_two = mode.is_closed
+> ```
+>
+> Add this to try a trigger. You can change the `if` line:
+>
+> ```python
+> print(mode_two)
+> if mode_two:
+>     print("Alarm trigger detected!")
+> ```
 
 ## Test
 
 > [!TASK]
 >
-> Move or open the object. Can you put the input where it will detect that change reliably?
+> Flip the switch each way and run again. Which position gives `True`?
 
-Choose an input from group 3 and follow its diagram before attaching it permanently.
+## Make it yours
+
+Choose its job: trigger a warning, [arm the alarm](5B%20-%20Arm%20and%20reset%20your%20alarm.md) or select a mode.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

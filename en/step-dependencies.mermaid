@@ -1,36 +1,56 @@
 flowchart LR
-    P1A["1A Connect and test your Pico"]
-    P2A["2A - Follow your own alarm idea"]
-    P2B["2B - Fold a home for it"]
-    P2C["2C - Adapt an object"]
-    P3A["3A - Press or separate contacts"]
-    P3B["3B - Touch a pad"]
-    P3C["3C - Flip a switch"]
-    P3D["3D - Tip or move it"]
-    P3E["3E - Watch the light"]
-    P3F["3F - Notice someone nearby"]
-    P3G["3G - Cross a marked line"]
-    P3H["3H - Turn a dial"]
-    P3I["3I - Notice warmth"]
-    P3J["3J - Check warm or cool"]
-    P4A["4A - Flash one LED"]
-    P4B["4B - Change warning colours"]
-    P4C["4C - Sound an active buzzer"]
-    P4D["4D - Make a warning tone"]
-    P5A["5A - Choose what counts as a trigger"]
-    P5B["5B - Arm and reset your alarm"]
-    P5C["5C - Change the warning pattern"]
-    P6A["6A - Join one input and warning"]
-    P6B["6B - Add another input or warning"]
-    P7A["7A - Try it and improve it"]
-    P8A["8A - Guard a model treasure"]
-    P8B["8B - Notice a visitor"]
-    P8C["8C - Notice a moved object"]
-    P1A --> P2A & P2B & P2C
-    P1A --> P3A & P3B & P3C & P3D & P3E & P3F & P3G & P3H & P3I & P3J
-    P1A --> P4A & P4B & P4C & P4D
-    P3A & P3B & P3C & P3D & P3E & P3F & P3G & P3H & P3I & P3J --> P6A
-    P4A & P4B & P4C & P4D --> P6A
-    P6A --> P7A
-    P6A -. optional .-> P5A & P5B & P5C & P6B
-    P2A & P2B & P2C -. ideas .-> P8A & P8B & P8C
+    HUB["Choose any part • return here at any time"]
+    P1A["Connect and test your Pico"]
+    P3A["Button or homemade switch"]
+    P3B["Touch sensor"]
+    P3C["Toggle switch"]
+    P3D["Tilt switch"]
+    P3E["Light sensor (LDR)"]
+    P3F["Ultrasonic distance sensor"]
+    P3G["Line sensor"]
+    P3H["Potentiometer (dial)"]
+    P3I["Temperature sensor (TMP36)"]
+    P3J["Temperature probe (DS18B20)"]
+    P4A["LED"]
+    P4B["RGB LED"]
+    P4C["Active buzzer"]
+    P4D["Passive buzzer"]
+    P5A["Choose what counts as a trigger"]
+    P5B["Arm and reset your alarm"]
+    P5C["Change the warning pattern"]
+    P6A["Join one input and warning"]
+    P6B["Add another input or warning"]
+    P2A["Design your own case"]
+    P2B["Card and paper"]
+    P2C["Reuse an object"]
+    P7A["Try it and improve it"]
+    P8A["Guard a model treasure"]
+    P8B["Notice a visitor"]
+    P8C["Notice a moved object"]
+    P1A --> HUB
+    HUB <--> P3A
+    HUB <--> P3B
+    HUB <--> P3C
+    HUB <--> P3D
+    HUB <--> P3E
+    HUB <--> P3F
+    HUB <--> P3G
+    HUB <--> P3H
+    HUB <--> P3I
+    HUB <--> P3J
+    HUB <--> P4A
+    HUB <--> P4B
+    HUB <--> P4C
+    HUB <--> P4D
+    HUB <--> P5A
+    HUB <--> P5B
+    HUB <--> P5C
+    HUB <--> P6A
+    HUB <--> P6B
+    HUB <--> P2A
+    HUB <--> P2B
+    HUB <--> P2C
+    HUB <--> P7A
+    HUB <--> P8A
+    HUB <--> P8B
+    HUB <--> P8C

@@ -38,6 +38,8 @@ def routes() -> list[dict[str, str]]:
             option["file"] = line.partition(": ")[2]
         elif option is not None and line.startswith("        title: "):
             option["title"] = line.partition(": ")[2]
+        elif option is not None and line.startswith("        description: "):
+            option["description"] = line.partition(": ")[2]
     return groups
 
 
@@ -92,6 +94,19 @@ def blocks(source: str, ids: dict[str, str]) -> str:
         line = lines[at]
         if not line.strip():
             at += 1
+            continue
+        if line == "<details>":
+            at += 1
+            summary = re.fullmatch(r"<summary>(.+)</summary>", lines[at])
+            assert summary, "A details block needs a summary"
+            at += 1
+            content = []
+            while at < len(lines) and lines[at] != "</details>":
+                content.append(lines[at])
+                at += 1
+            assert at < len(lines), "Unclosed details block"
+            at += 1
+            output.append(f'<details class="worked-example"><summary>{inline(summary.group(1), ids)}</summary>{blocks(chr(10).join(content), ids)}</details>')
             continue
         if line.startswith(">"):
             quoted = []
@@ -152,7 +167,7 @@ def build() -> str:
         body = re.sub(r"^## [0-9]+[A-Z] - ", "## ", body, count=1)
         pages[option["id"]] = {"title": display_title(option["title"]), "html": blocks(body, ids)}
     result = {"landing": blocks((EN / "landing.md").read_text(), ids),
-              "groups": [{"title": group["title"], "options": [{"id": o["id"], "title": display_title(o["title"])} for o in group["options"]]} for group in groups],
+              "groups": [{"title": group["title"], "options": [{"id": o["id"], "title": display_title(o["title"]), **({"description": o["description"]} if o.get("description") else {})} for o in group["options"]]} for group in groups],
               "pages": pages}
     return json.dumps(result, ensure_ascii=False, indent=2) + "\n"
 

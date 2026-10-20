@@ -1,4 +1,4 @@
-## 2B - Fold a home for it
+## 2B - Card and paper
 
 Card and paper can hide the circuit or make the warning more visible.
 
@@ -16,7 +16,7 @@ Card and paper can hide the circuit or make the warning more visible.
 
 > [!TASK]
 >
-> Leave an opening for the USB cable and a flap for fixing wires. Keep metal foil contacts apart until the action you want makes them meet.
+> Leave an opening for the USB cable and a flap for fixing wires. If you use foil contacts, try where they meet and separate.
 
 ## Test
 

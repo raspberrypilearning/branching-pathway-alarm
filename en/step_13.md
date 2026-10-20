@@ -1,50 +1,39 @@
-## 3I - Notice warmth
+## 4B - RGB LED
 
-A temperature sensor can notice a slow change in warmth.
+Mix red, green and blue light. You choose the colours and what they mean.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Use a common-cathode LED.
 
-## Step 1
-
-> [!TASK]
->
-> Gather a TMP36 sensor and three leads.
->
-> Flat face towards you: left to 3V3, centre to GP28, right to GND. Keep the legs apart.
->
-> ![Play with warmth wiring diagram from Skills Bricks](images/temperature-sensor-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/temperature-sensor/temperature-sensor-pico.html) in Thonny:
+> Connect the R leg through **220 Ω to GP3**, G through **220 Ω to GP4**, B through **220 Ω to GP5**, and the common long leg to **GND**. Each colour needs its own resistor.
+>
+> ![RGB LED and three resistor wiring from Skills Bricks](images/rgb-led-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Try the [Skills Bricks RGB LED code](https://raspberrypifoundation.github.io/skills-bricks/rgb-led/rgb-led-pico.html):
 >
 > ```python
-> from picozero import TemperatureSensor
+> from picozero import RGBLED
 >
-> convert = lambda voltage: (voltage - 0.5) * 100
-> sensor = TemperatureSensor(28, conversion=convert)
+> light = RGBLED(red=3, green=4, blue=5)
 >
-> temperature = sensor.temp
+> light.color = (255, 0, 255)
 > ```
 >
-> Add this underneath to see when the component detects an event:
->
-> ```python
-> print(temperature)
-> if temperature > 25:
->     print("Alarm trigger detected!")
-> ```
+> Try `light.color = (0, 255, 0)` for green or `(255, 0, 0)` for red. Each number goes from `0` to `255`. Use `light.off()` to switch it off.
 
 ## Test
 
 > [!TASK]
 >
-> Read the room temperature, then warm the sensor gently with your fingers. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Can you make two colours that someone can tell apart? Put a label or shape beside the light so colour is not the only clue.
 
-## Make it yours
-
-Use it for a warm/cool exhibit; set a threshold different from room temperature. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.

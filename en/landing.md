@@ -1,13 +1,15 @@
 ## What you will make
 
-Make an alarm with a Raspberry Pi Pico. It will **notice a change**, **give a warning**, and let you **reset it**. What it watches and how it warns are your choices.
+Make an alarm with a Raspberry Pi Pico. **You choose what it detects, how it warns and what it looks like.**
 
-First open the [starter project](resources/alarm.py) and complete [connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). Once its LED and ready message work on your real Pico, choose any part:
+Open the [starter project](resources/alarm.py) and [connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). Then pick any part:
 
-- **Make a case:** craft a case or adapt an object.
-- **Detect a change:** press, touch, tip, block light, move nearby and more. Choose one or several.
-- **Give a warning:** use a light, colours, a buzzer or a mixture.
-- **Decide with code:** choose a trigger, add an arm switch, or change the warning pattern.
-- **Bring it together:** connect your chosen action to a warning, then test and reset it.
+- **Detect a change:** choose a button, switch or sensor.
+- **Give a warning:** choose an LED, RGB LED or buzzer.
+- **Decide with code:** choose what sets it off and when it stops.
+- **Bring it together:** combine your chosen parts.
+- **Make a case:** choose your own shape and materials.
+- **Test and Improve:** try it, change something, try again.
+- **Ideas to borrow:** optional examples to spark your own idea.
 
-The menu groups choices; it is **not** a list to complete in order. You can craft, wire or code first after the Pico check. If a page needs a part you have not tested, follow its link back and return. The alarm ideas at the end are examples to borrow from, not builds to copy.
+Start with the parts you have. Each component page has wiring, code and a quick test. Mix your choices in any order after the Pico test.

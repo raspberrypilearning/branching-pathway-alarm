@@ -1,40 +1,40 @@
-## 3D - Tip or move it
+## 3G - Line sensor
 
-A tilt switch can notice when someone picks up or moves an object.
+Detect a change between a light and dark surface with a KY-033 sensor.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather a ball tilt switch and two leads.
->
-> Connect GP8 through the switch to GND.
->
-> ![Tip or rock it wiring diagram from Skills Bricks](images/tilt-switch-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/tilt-switch/tilt-switch-pico.html) in Thonny:
+> Gather a KY-033 line sensor, contrasting card and three leads.
+>
+> S goes to GP18, V+ to 3V3 OUT and G to GND.
+>
+> ![Line sensor wiring diagram from Skills Bricks](images/line-sensor-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/line-sensor/line-sensor-pico.html) in Thonny:
 >
 > ```python
-> from picozero import Switch
+> from picozero import DigitalInputDevice
 >
-> tilt = Switch(8)
+> line = DigitalInputDevice(18, pull_up=False)
 >
-> tilted = tilt.is_open
+> on_line = line.is_active
 > ```
 >
-> Add this underneath to see when the component detects an event:
+> Add this to try a trigger. You can change the `if` line:
 >
 > ```python
-> print(tilted)
-> if tilted:
+> print(on_line)
+> if on_line:
 >     print("Alarm trigger detected!")
 > ```
 
@@ -42,8 +42,10 @@ A tilt switch can notice when someone picks up or moves an object.
 
 > [!TASK]
 >
-> Tip slowly. The reading may flicker while the ball rolls. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Try a light and dark surface under the sensor, running again each time. Adjust its small dial until the reading changes.
 
 ## Make it yours
 
-Place it inside a model treasure or prop that someone might move. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose which surface should trigger your alarm. Try `if on_line:` or `if not on_line:`; you choose what moves past the sensor.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

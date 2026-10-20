@@ -1,49 +1,39 @@
-## 3H - Turn a dial
+## 4A - LED
 
-A dial can be a secret setting, a trigger or a sensitivity control.
+A single LED can give a bright, simple warning.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather a 10 kΩ potentiometer and three leads.
->
-> One end goes to GND, the middle to GP26, and the other end to 3V3 OUT. Check your dial’s leg order.
->
-> ![Turn a dial wiring diagram from Skills Bricks](images/potentiometer-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/potentiometer/potentiometer-pico.html) in Thonny:
+> Use an LED and a **220 Ω resistor**. Connect **GP11 → resistor → long LED leg** and **short leg → GND**. The resistor must stay in the circuit.
+>
+> ![LED and resistor wiring from Skills Bricks](images/led-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Try the [Skills Bricks LED code](https://raspberrypifoundation.github.io/skills-bricks/led/led-pico.html):
 >
 > ```python
-> from picozero import Pot
+> from picozero import LED
 >
-> pot = Pot(26)
+> led = LED(11)
 >
-> setting = pot.value
+> led.on()
 > ```
 >
-> Add this underneath to see when the component detects an event:
->
-> ```python
-> print(setting)
-> if setting > 0.5:
->     print("Alarm trigger detected!")
-> ```
+> Add `led.off()` after looking at it. In your alarm, `if triggered:` can turn the LED on; `else:` can turn it off.
 
 ## Test
 
 > [!TASK]
 >
-> Turn gently. Run again at different positions; the value should move between about 0 and 1. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Did it light? If not, check which leg is long, the resistor, GP11 and GND. Try placing it where a player can see it.
 
-## Make it yours
-
-Use it to choose the trigger distance or light level when you [choose a trigger](5A%20-%20Choose%20what%20counts%20as%20a%20trigger.md). When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.

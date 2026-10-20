@@ -65,7 +65,9 @@ def check_content(routes: list[tuple[str, Path]]) -> None:
     for card in cards.values():
         assert (ROOT / card["wiring"]).is_file(), f"Missing source wiring: {card['id']}"
     control_ids = ["button", "capacitive-touch", "toggle-switch", "tilt-switch", "ldr", "distance", "line-sensor", "potentiometer", "temperature-sensor", "temperature-probe"]
-    for (_, page), id in zip(routes[4:14], control_ids):
+    route_files = dict(routes)
+    for route, id in zip((f"3{letter}" for letter in "ABCDEFGHIJ"), control_ids):
+        page = route_files[route]
         body = "\n".join(line[2:] if line.startswith("> ") else "" if line == ">" else line for line in page.read_text().splitlines())
         assert cards[id]["code"].strip() in body, f"Skills Bricks code changed in {page.name}"
         assert (EN / "images" / f"{id}-wiring.png").is_file(), f"Missing wiring diagram: {id}"

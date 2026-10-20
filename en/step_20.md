@@ -1,43 +1,57 @@
-## 5B - Arm and reset your alarm
+## 6B - Add another input or warning
 
-Add an **arm switch** so your alarm only watches for a trigger when you choose.
+Give each part a job. Two inputs could trigger one warning, or one input could trigger lights and sound.
 
 > [!CAUTION]
 >
-> First [test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md), [toggle switch](3C%20-%20Flip%20a%20switch.md), [trigger input](3A%20-%20Press%20or%20separate%20contacts.md) and [warning](4A%20-%20Flash%20one%20LED.md). Unplug before joining circuits.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Give each signal its own GP pin; the circuits can share GND.
 
-## Step 1
+## Choose a rule
 
-> [!TASK]
->
-> Keep the [Skills Bricks switch wiring](https://raspberrypifoundation.github.io/skills-bricks/toggle-switch/toggle-switch-pico.html): COM to GP6, one outside leg to GND.
->
-> ![Arm switch wiring from Skills Bricks](images/toggle-switch-wiring.png)
+Use `or` if **either** input should trigger the warning. Use `and` if **both** must happen. You can choose your parts and rule here, even if you have not built anything yet.
 
-## Step 2
+<details>
+<summary>Try an example: two inputs, light and sound</summary>
 
-> [!TASK]
->
-> This example uses a button on GP10 and an LED on GP11. The warning stops when you disarm **or** release the button; that is its reset.
->
-> ```python
-> from picozero import Switch, Button, LED
-> from time import sleep
->
-> arm = Switch(6)
-> trigger = Button(10)
-> warning = LED(11)
->
-> while True:
->     if arm.is_closed and trigger.is_pressed:
->         warning.on()
->     else:
->         warning.off()
->     sleep(0.05)
-> ```
+### Wire it
+
+Button: GP10 to GND. Tilt switch: GP8 to GND. Active buzzer: + to GP9, − to GND. LED: GP11 through 220 Ω to its long leg, short leg to GND.
+
+![Button wiring from Skills Bricks](images/button-wiring.png)
+
+![Tilt input wiring from Skills Bricks](images/tilt-switch-wiring.png)
+
+![Active buzzer wiring from Skills Bricks](images/buzzer-wiring.png)
+
+![LED wiring from Skills Bricks](images/led-wiring.png)
+
+### Try the code
+
+Either input triggers both warnings:
+
+```python
+from picozero import Button, Switch, LED, Buzzer
+from time import sleep
+
+button = Button(10)
+tilt = Switch(8)
+light = LED(11)
+sound = Buzzer(9)
+
+while True:
+    if button.is_pressed or tilt.is_open:
+        light.on()
+        sound.on()
+    else:
+        light.off()
+        sound.off()
+    sleep(0.05)
+```
+
+Use your components’ setup, readings and actions in place of these. Change `or` to `and` to try a different rule.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Try all four combinations: armed/disarmed and button pressed/released. Decide whether your alarm should reset automatically like this, or need a separate reset action.
+Try or act out each input alone, then together. Do the warnings match your rule? What should happen when neither input is triggered?

@@ -1,12 +1,12 @@
-## 4A - Flash one LED
+## 4A - LED
 
 A single LED can give a bright, simple warning.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Test the LED alone before adding an input.
+> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring.
 
-## Step 1
+## Wire it
 
 > [!TASK]
 >
@@ -14,7 +14,7 @@ A single LED can give a bright, simple warning.
 >
 > ![LED and resistor wiring from Skills Bricks](images/led-wiring.png)
 
-## Step 2
+## Try the code
 
 > [!TASK]
 >
@@ -35,3 +35,5 @@ A single LED can give a bright, simple warning.
 > [!TASK]
 >
 > Did it light? If not, check which leg is long, the resistor, GP11 and GND. Try placing it where a player can see it.
+
+Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.

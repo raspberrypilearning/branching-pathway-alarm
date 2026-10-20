@@ -1,42 +1,41 @@
-## 3F - Notice someone nearby
+## 3I - Temperature sensor (TMP36)
 
-A distance sensor can notice an approaching hand without contact.
+Measure temperature in degrees Celsius with a TMP36 sensor.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather a 3.3 V-compatible HC-SR04P ultrasonic sensor and four leads.
->
-> Trig goes to GP20, Echo to GP21, VCC to 3V3 OUT and GND to GND. Use the HC-SR04P, not a 5 V Echo module.
->
-> ![Distance sensor wiring diagram from Skills Bricks](images/distance-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/distance/distance-pico.html) in Thonny:
+> Gather a TMP36 sensor and three leads.
+>
+> Flat face towards you: left to 3V3, centre to GP28, right to GND. Keep the legs apart.
+>
+> ![Temperature sensor (TMP36) wiring diagram from Skills Bricks](images/temperature-sensor-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/temperature-sensor/temperature-sensor-pico.html) in Thonny:
 >
 > ```python
-> from picozero import DistanceSensor
+> from picozero import TemperatureSensor
 >
-> sensor = DistanceSensor(
->     echo=21, trigger=20
-> )
+> convert = lambda voltage: (voltage - 0.5) * 100
+> sensor = TemperatureSensor(28, conversion=convert)
 >
-> distance = sensor.distance
+> temperature = sensor.temp
 > ```
 >
-> Add this underneath to see when the component detects an event:
+> Add this to try a trigger. You can change the `if` line:
 >
 > ```python
-> print(distance)
-> if distance is not None and distance < 0.3:
+> print(temperature)
+> if temperature > 25:
 >     print("Alarm trigger detected!")
 > ```
 
@@ -44,8 +43,10 @@ A distance sensor can notice an approaching hand without contact.
 
 > [!TASK]
 >
-> Move your hand in front of the two round parts. The number is metres; None means no echo. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Read the room temperature, then warm the sensor gently with your fingers and run again.
 
 ## Make it yours
 
-Choose how close someone must get before the warning starts. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose warmer or cooler as your trigger. Set a temperature you can reach in your test and use `>` or `<`.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

@@ -1,50 +1,27 @@
-## 6B - Add another input or warning
+## 2C - Reuse an object
 
-One input and one warning are enough. Add a second part only if it improves your idea.
+A box, bag, model or toy can become the alarm's home.
 
 > [!CAUTION]
 >
-> First make [one input and warning](6A%20-%20Join%20one%20input%20and%20warning.md) work. Test every new part on its own. Unplug before changing wiring; check that the GP pins do not clash.
+> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Do that before testing the circuit. You can choose an object now.
 
 ## Step 1
 
 > [!TASK]
 >
-> This example adds a tilt switch on GP8 and an active buzzer on GP9 to a button on GP10 and LED on GP11. Use the wiring from each Skills Bricks page.
->
-> ![Tilt input wiring from Skills Bricks](images/tilt-switch-wiring.png)
->
-> ![Active buzzer wiring from Skills Bricks](images/buzzer-wiring.png)
+> Pick an object and decide what change it should notice. Try the movement before fixing any electronics to it.
 
 ## Step 2
 
 > [!TASK]
 >
-> `or` makes either input trigger both warnings:
->
-> ```python
-> from picozero import Button, Switch, LED, Buzzer
-> from time import sleep
->
-> button = Button(10)
-> tilt = Switch(8)
-> light = LED(11)
-> sound = Buzzer(9)
->
-> while True:
->     if button.is_pressed or tilt.is_open:
->         light.on()
->         sound.on()
->     else:
->         light.off()
->         sound.off()
->     sleep(0.05)
-> ```
->
-> Change `or` to `and` only if **both** events should be needed. If you chose another component, use its reading from its page.
+> Support the Pico on removable card. Keep the USB socket accessible. Cover any loose metal that could touch the circuit by accident.
 
 ## Test
 
 > [!TASK]
 >
-> Try each input alone, then both together. Move the tilt back and release the button to reset. If it keeps warning, check which position makes `tilt.is_open` true.
+> Move or open the object. Can you put the input where it will detect that change reliably?
+
+Use your chosen input’s diagram to plan where it will fit. Keep it easy to move while you experiment.

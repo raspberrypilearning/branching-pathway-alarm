@@ -1,12 +1,12 @@
-## 4B - Change warning colours
+## 4B - RGB LED
 
-An RGB LED can show one colour for **ready** and another for **warning**.
+Mix red, green and blue light. You choose the colours and what they mean.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Test the RGB LED alone before adding inputs. Use a common-cathode LED.
+> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Use a common-cathode LED.
 
-## Step 1
+## Wire it
 
 > [!TASK]
 >
@@ -14,7 +14,7 @@ An RGB LED can show one colour for **ready** and another for **warning**.
 >
 > ![RGB LED and three resistor wiring from Skills Bricks](images/rgb-led-wiring.png)
 
-## Step 2
+## Try the code
 
 > [!TASK]
 >
@@ -28,10 +28,12 @@ An RGB LED can show one colour for **ready** and another for **warning**.
 > light.color = (255, 0, 255)
 > ```
 >
-> Try `light.color = (0, 255, 0)` for ready and `(255, 0, 0)` for warning. Use `light.off()` to switch it off.
+> Try `light.color = (0, 255, 0)` for green or `(255, 0, 0)` for red. Each number goes from `0` to `255`. Use `light.off()` to switch it off.
 
 ## Test
 
 > [!TASK]
 >
 > Can you make two colours that someone can tell apart? Put a label or shape beside the light so colour is not the only clue.
+
+Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.

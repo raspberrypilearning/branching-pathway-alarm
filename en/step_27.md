@@ -4,7 +4,7 @@ Borrow this idea for a model artefact that complains when someone picks it up.
 
 > [!CAUTION]
 >
-> Complete the [Pico test](1A%20-%20Connect%20and%20test%20your%20Pico.md), then test the [tilt switch](3D%20-%20Tip%20or%20move%20it.md) and [active buzzer](4C%20-%20Sound%20an%20active%20buzzer.md) separately. Use a small 3.3 V GPIO-compatible buzzer.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Use a small 3.3 V GPIO-compatible buzzer.
 
 ## Step 1
 

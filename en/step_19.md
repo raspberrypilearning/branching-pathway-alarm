@@ -1,37 +1,54 @@
-## 5A - Choose what counts as a trigger
+## 6A - Join one input and warning
 
-Your alarm decides when a reading is *enough* to warn someone. Choose your own line.
+Choose any input and any warning. Decide: **when this happens, do that**.
 
 > [!CAUTION]
 >
-> First [test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md) and [test the input](3E%20-%20Watch%20the%20light.md) you want to use. A reading from an untested sensor can make the alarm seem broken.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Give each signal its own GP pin; the circuits can share GND.
 
-## Step 1
+## Combine your choices
 
-> [!TASK]
->
-> Here is the [Skills Bricks light-sensor circuit](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html). Read your own sensor in its usual place, then while you trigger it.
->
-> ![LDR wiring from Skills Bricks](images/ldr-wiring.png)
+- Use the wiring diagrams for the parts you chose.
+- Put their imports and setup lines at the top of `alarm.py`.
+- Inside `while True:`, read your input and use its `if` line to start your warning. Use `else:` to stop it when the trigger goes away.
 
-## Step 2
+Keep taking a new reading inside the loop so your alarm can notice changes.
 
-> [!TASK]
->
-> Put your trigger value between those two readings. For an LDR wired as shown, darker usually gives a smaller number:
->
-> ```python
-> from picozero import AnalogInputDevice
->
-> ldr = AnalogInputDevice(27)
-> if ldr.value < 0.5:
->     print("Too dark: warn someone!")
-> ```
->
-> Use `>` to notice a lid opening into light. For another sensor, keep its wiring and reading from its page; change only the test inside `if`.
+<details>
+<summary>Try an example: a button and LED</summary>
+
+### Wire it
+
+Button: GP10 to GND. LED: GP11 through a 220 Ω resistor to its long leg; short leg to GND.
+
+![Button input wiring from Skills Bricks](images/button-wiring.png)
+
+![LED warning wiring from Skills Bricks](images/led-wiring.png)
+
+### Try the code
+
+Add this below the starter test in your saved `alarm.py`:
+
+```python
+from picozero import Button, LED
+from time import sleep
+
+button = Button(10)
+led = LED(11)
+
+while True:
+    pressed = button.is_pressed
+    if pressed:
+        led.on()
+    else:
+        led.off()
+    sleep(0.05)
+```
+
+For your own parts, use their setup, reading and warning commands. Keep the indentation and short pause.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Try the ordinary situation and the trigger three times each. Adjust `0.5` until the message appears only when you want it. Then [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Try your rule, or act it out while you plan. What should start the warning? What should stop it? If a part does not respond, its component page has a small test to help.

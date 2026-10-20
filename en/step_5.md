@@ -1,40 +1,40 @@
-## 3A - Press or separate contacts
+## 3D - Tilt switch
 
-A press or two pieces of foil meeting can tell an alarm that something opened or moved.
+Detect a change in angle. A small ball inside the switch makes or breaks a contact.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug it before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather a push button or foil and a card spacer.
->
-> Connect GP10 through the switch to GND. A four-leg button has joined pairs: follow the picture.
->
-> ![Press or squeeze wiring diagram from Skills Bricks](images/button-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/button/button-pico.html) in Thonny:
+> Gather a ball tilt switch and two leads.
+>
+> Connect GP8 through the switch to GND.
+>
+> ![Tilt switch wiring diagram from Skills Bricks](images/tilt-switch-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/tilt-switch/tilt-switch-pico.html) in Thonny:
 >
 > ```python
-> from picozero import Button
+> from picozero import Switch
 >
-> button = Button(10)
+> tilt = Switch(8)
 >
-> pressed = button.is_pressed
+> tilted = tilt.is_open
 > ```
 >
-> Add this underneath to see when the component detects an event:
+> Add this to try a trigger. You can change the `if` line:
 >
 > ```python
-> print(pressed)
-> if pressed:
+> print(tilted)
+> if tilted:
 >     print("Alarm trigger detected!")
 > ```
 
@@ -42,8 +42,10 @@ A press or two pieces of foil meeting can tell an alarm that something opened or
 
 > [!TASK]
 >
-> Press and release. Run the code each time and look for True and False. Keep foil apart until pressed. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Tip slowly and run again. Find the positions that give `True` and `False`; the reading may flicker while the ball rolls.
 
 ## Make it yours
 
-A flap, lid or door can close your switch. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose an angle that should trigger your alarm. Use `if tilted:` or `if not tilted:` to match it.
+
+Ready? [Connect it to your chosen warning](6A%20-%20Join%20one%20input%20and%20warning.md).

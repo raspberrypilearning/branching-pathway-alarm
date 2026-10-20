@@ -1,37 +1,45 @@
-## 4B - Change warning colours
+## 5A - Choose what counts as a trigger
 
-An RGB LED can show one colour for **ready** and another for **warning**.
+Choose the rule that sets off your alarm. You can start by inventing it, then try it with any input.
 
 > [!CAUTION]
 >
-> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Test the RGB LED alone before adding inputs. Use a common-cathode LED.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before changing wires.
 
-## Step 1
+## Choose a rule
 
-> [!TASK]
->
-> Connect the R leg through **220 Ω to GP3**, G through **220 Ω to GP4**, B through **220 Ω to GP5**, and the common long leg to **GND**. Each colour needs its own resistor.
->
-> ![RGB LED and three resistor wiring from Skills Bricks](images/rgb-led-wiring.png)
+- **Yes or no:** a button is pressed, a pad is touched or a switch changes position.
+- **Above or below:** a distance, light level or temperature passes a number you choose.
 
-## Step 2
+Write it as **“When ______, warn me.”** Your component page has an `if` line to adapt.
 
-> [!TASK]
->
-> Try the [Skills Bricks RGB LED code](https://raspberrypifoundation.github.io/skills-bricks/rgb-led/rgb-led-pico.html):
->
-> ```python
-> from picozero import RGBLED
->
-> light = RGBLED(red=3, green=4, blue=5)
->
-> light.color = (255, 0, 255)
-> ```
->
-> Try `light.color = (0, 255, 0)` for ready and `(255, 0, 0)` for warning. Use `light.off()` to switch it off.
+<details>
+<summary>Try an example: a light-level rule</summary>
+
+### Wire it
+
+Use the [light sensor](3E%20-%20Light%20sensor%20%28LDR%29.md) circuit: LDR to 3V3, 10 kΩ resistor to GND, their join to GP27.
+
+![LDR wiring from Skills Bricks](images/ldr-wiring.png)
+
+### Try the code
+
+This uses the [Skills Bricks LDR](https://raspberrypifoundation.github.io/skills-bricks/ldr/ldr-pico.html) setup. Run it in light and shade:
+
+```python
+from picozero import AnalogInputDevice
+
+ldr = AnalogInputDevice(27)
+light = ldr.value
+print(light)
+if light < 0.5:
+    print("Warn me!")
+```
+
+Change `<` to `>` for more light. Choose a number between your two readings.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Can you make two colours that someone can tell apart? Put a label or shape beside the light so colour is not the only clue.
+Try or act out both situations: one that should trigger your alarm and one that should not. Does your rule tell them apart?

@@ -1,55 +1,42 @@
-## 3J - Check warm or cool
+## 4C - Active buzzer
 
-A sealed probe can compare warm and cool water slowly.
+An **active** buzzer has one built-in pitch. You can change its beep rhythm. Check the packet for *active* or *built-in oscillator*.
 
 > [!CAUTION]
 >
-> First complete [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md). You can explore this idea before wiring it.
+> Have you completed [1A - Connect and test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Use a small **3.3 V GPIO-compatible** buzzer and unplug before wiring.
 
-## Step 1
-
-> [!TASK]
->
-> Gather a sealed DS18B20 probe, a 4.7 kΩ resistor and leads.
->
-> VDD goes to 3V3, DQ to GP22, GND to GND. Put 4.7 kΩ between DQ and 3V3. Check your probe’s wire colours.
->
-> ![Explore warm and cool wiring diagram from Skills Bricks](images/temperature-probe-wiring.png)
-
-## Step 2
+## Wire it
 
 > [!TASK]
 >
-> Run the [Skills Bricks code](https://raspberrypifoundation.github.io/skills-bricks/temperature-probe/temperature-probe-pico.html) in Thonny:
+> Connect buzzer **+ → GP9** and **− → GND**.
+>
+> ![Active buzzer wiring from Skills Bricks](images/buzzer-wiring.png)
+
+## Try the code
+
+> [!TASK]
+>
+> Try the [Skills Bricks active-buzzer code](https://raspberrypifoundation.github.io/skills-bricks/buzzer/buzzer-pico.html):
 >
 > ```python
-> from machine import Pin
-> import onewire, ds18x20
-> from time import sleep_ms
+> from picozero import Buzzer
 >
-> bus = onewire.OneWire(Pin(22))
-> sensor = ds18x20.DS18X20(bus)
-> probes = sensor.scan()
-> assert probes, "Check probe wiring"
-> sensor.convert_temp()
-> sleep_ms(750)
-> temperature = sensor.read_temp(probes[0])
-> print(temperature)
+> buzzer = Buzzer(9)
+>
+> buzzer.on()
+> from time import sleep
+> sleep(0.25)
+> buzzer.off()
 > ```
 >
-> Add this underneath to see when the component detects an event:
->
-> ```python
-> if temperature > 25:
->     print("Alarm trigger detected!")
-> ```
+> In an alarm, `if triggered:` can turn it on; `else:` can turn it off.
 
 ## Test
 
 > [!TASK]
 >
-> Wait for each new reading. Only the sealed tip goes in water; keep the Pico and connections dry. Change the number or reverse the `if` condition if your alarm needs the opposite action.
+> Did you hear one steady pitch? Change the **length**, not its pitch, to make the warning yours. An active buzzer cannot play different notes.
 
-## Make it yours
-
-Make a warm/cool warning experiment; a probe needs time to change. When your test detects the event you want, [join it to a warning](6A%20-%20Join%20one%20input%20and%20warning.md).
+Choose when it warns on the [bring it together](6A%20-%20Join%20one%20input%20and%20warning.md) page.

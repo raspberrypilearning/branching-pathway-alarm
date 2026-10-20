@@ -1,46 +1,54 @@
 ## 6A - Join one input and warning
 
-Now make a first working alarm: **notice something → warn → reset**. This button-and-LED example is a starting point; swap in your choices.
+Choose any input and any warning. Decide: **when this happens, do that**.
 
 > [!CAUTION]
 >
-> First [test your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md), [input](3A%20-%20Press%20or%20separate%20contacts.md) and [warning](4A%20-%20Flash%20one%20LED.md) separately. Unplug before combining wiring. Give each part its own GP pin.
+> Have you [tested your Pico](1A%20-%20Connect%20and%20test%20your%20Pico.md)? Unplug before wiring. Give each signal its own GP pin; the circuits can share GND.
 
-## Step 1
+## Combine your choices
 
-> [!TASK]
->
-> Wire the Skills Bricks button between **GP10 and GND**. Wire the LED from **GP11 through a 220 Ω resistor** to its long leg, then its short leg to GND. The circuits share GND.
->
-> ![Button input wiring from Skills Bricks](images/button-wiring.png)
->
-> ![LED warning wiring from Skills Bricks](images/led-wiring.png)
+- Use the wiring diagrams for the parts you chose.
+- Put their imports and setup lines at the top of `alarm.py`.
+- Inside `while True:`, read your input and use its `if` line to start your warning. Use `else:` to stop it when the trigger goes away.
 
-## Step 2
+Keep taking a new reading inside the loop so your alarm can notice changes.
 
-> [!TASK]
->
-> Add this below the starter test in your saved `alarm.py`:
->
-> ```python
-> from picozero import Button, LED
-> from time import sleep
->
-> trigger = Button(10)
-> warning = LED(11)
->
-> while True:
->     if trigger.is_pressed:
->         warning.on()
->     else:
->         warning.off()
->     sleep(0.05)
-> ```
->
-> For your own parts, keep their exact setup and reading from their Skills Bricks pages. Put your condition after `if`, and your warning action inside it.
+<details>
+<summary>Try an example: a button and LED</summary>
+
+### Wire it
+
+Button: GP10 to GND. LED: GP11 through a 220 Ω resistor to its long leg; short leg to GND.
+
+![Button input wiring from Skills Bricks](images/button-wiring.png)
+
+![LED warning wiring from Skills Bricks](images/led-wiring.png)
+
+### Try the code
+
+Add this below the starter test in your saved `alarm.py`:
+
+```python
+from picozero import Button, LED
+from time import sleep
+
+button = Button(10)
+led = LED(11)
+
+while True:
+    pressed = button.is_pressed
+    if pressed:
+        led.on()
+    else:
+        led.off()
+    sleep(0.05)
+```
+
+For your own parts, use their setup, reading and warning commands. Keep the indentation and short pause.
+
+</details>
 
 ## Test
 
-> [!TASK]
->
-> Press: warning on. Release: warning off. That release is the reset. If yours warns at the wrong time, swap the `if` condition or adjust its threshold.
+Try your rule, or act it out while you plan. What should start the warning? What should stop it? If a part does not respond, its component page has a small test to help.
